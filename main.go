@@ -1,5 +1,9 @@
 package main
 
+import (
+	"huntsman/cmd"
+)
+
 func main() {
-	huntsman.cmd.Execute()
+	cmd.Execute()
 }
