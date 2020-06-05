@@ -12,8 +12,15 @@ A swiss army knife for all things security.
 4. `go install`
 
 # Example
-1. Parsing location info from log file  
+1. Parsing location info from log file of `tcpdump`
 ```
-huntsman iploc --tcpdump --file=server.log
-Body:  {"status":"success","country":"United States","countryCode":"US","region":"NJ","regionName":"New Jersey","city":"Newark","zip":"07175","lat":40.7357,"lon":-74.1724,"timezone":"America/New_York","isp":"Facebook, Inc.","org":"Facebook, Inc.","as":"AS32934 Facebook, Inc.","query":"173.252.127.3"}
+iploc --tcpdump --file=server.log
+Request came from:  fwdproxy-frc-003.fbsv.net
+Details of the requester:  {"status":"success","country":"United States","countryCode":"US","region":"NJ","regionName":"New Jersey","city":"Newark","zip":"07175","lat":40.7357,"lon":-74.1724,"timezone":"America/New_York","isp":"Facebook, Inc.","org":"Facebook, Inc.","as":"AS32934 Facebook, Inc.","query":"173.252.127.3"}
 ```
+
+P.S- The log file was populated by:  
+```
+tcpdump -s 0 -A 'tcp[((tcp[12:1] & 0xf0) >> 2):4] = 0x47455420' > server.log
+```
+The above command was run on the server where HTTP service was running on port 80.
