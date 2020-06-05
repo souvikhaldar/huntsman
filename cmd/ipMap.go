@@ -36,7 +36,7 @@ var ipCmd = &cobra.Command{
 				fmt.Println("Unable to read log file", err)
 				return
 			}
-			ip, err = ParseIPFromTcpDump(fileContent)
+			ip, err = ParseIPFromTcpDump(string(fileContent))
 			if err != nil {
 				fmt.Println(err)
 				return
