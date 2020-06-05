@@ -16,11 +16,11 @@ var ipCmd = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 		var ip string
 		var err error
-		if len(args) == 0 {
-			fmt.Println("Provide the input")
-			return
-		}
-		fmt.Println("input is: ", args[0])
+		//		if len(args) == 0 {
+		//			fmt.Println("Provide the input")
+		//			return
+		//		}
+		//		fmt.Println("input is: ", args[0])
 		if tcpDump {
 			if file == "" {
 				fmt.Println("tcpdump log file source not provided")
