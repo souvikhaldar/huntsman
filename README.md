@@ -10,3 +10,10 @@ A swiss army knife for all things security.
 2. `git clone git@github.com:souvikhaldar/huntsman.git`
 3. `cd huntsman`  
 4. `go install`
+
+# Example
+1. Parsing location info from log file  
+```
+huntsman iploc --tcpdump --file=server.log
+Body:  {"status":"success","country":"United States","countryCode":"US","region":"NJ","regionName":"New Jersey","city":"Newark","zip":"07175","lat":40.7357,"lon":-74.1724,"timezone":"America/New_York","isp":"Facebook, Inc.","org":"Facebook, Inc.","as":"AS32934 Facebook, Inc.","query":"173.252.127.3"}
+```
