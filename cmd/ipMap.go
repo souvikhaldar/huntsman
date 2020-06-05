@@ -44,6 +44,7 @@ var ipCmd = &cobra.Command{
 		} else {
 			ip = args[0]
 		}
+		fmt.Println("Request came from: ", ip)
 		resp, err := http.Get(fmt.Sprintf("http://ip-api.com/json/%s", ip))
 		if err != nil {
 			fmt.Println(err)
@@ -55,7 +56,7 @@ var ipCmd = &cobra.Command{
 			fmt.Println(err)
 			return
 		}
-		fmt.Println("Body: ", string(body))
+		fmt.Println("Details of the requester: ", string(body))
 		return
 
 	},
