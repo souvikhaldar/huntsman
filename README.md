@@ -14,7 +14,7 @@ A swiss army knife for all things security.
 # Example
 1. Parsing location info from log file of `tcpdump`
 ```
-iploc --tcpdump --file=server.log
+huntsman iploc --tcpdump --file=server.log
 Request came from:  fwdproxy-frc-003.fbsv.net
 Details of the requester:  {"status":"success","country":"United States","countryCode":"US","region":"NJ","regionName":"New Jersey","city":"Newark","zip":"07175","lat":40.7357,"lon":-74.1724,"timezone":"America/New_York","isp":"Facebook, Inc.","org":"Facebook, Inc.","as":"AS32934 Facebook, Inc.","query":"173.252.127.3"}
 ```
