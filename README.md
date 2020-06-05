@@ -9,5 +9,4 @@ A swiss army knife for all things security.
 1. [Install Golang](https://golang.org/doc/install)    
 2. `git clone git@github.com:souvikhaldar/huntsman.git`
 3. `cd huntsman`  
-4. `chmod +x install.sh`  
-5. `sudo install.sh`  
+4. `go install`

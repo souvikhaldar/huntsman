@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
+	"os"
 	"strings"
 
 	"github.com/spf13/cobra"
@@ -19,8 +20,23 @@ var ipCmd = &cobra.Command{
 			fmt.Println("Provide the input")
 			return
 		}
+		fmt.Println("input is: ", args[0])
 		if tcpDump {
-			ip, err = ParseIPFromTcpDump(args[0])
+			if file == "" {
+				fmt.Println("tcpdump log file source not provided")
+				return
+			}
+			f, err := os.Open(file)
+			if err != nil {
+				fmt.Println("Unable to open log file", err)
+				return
+			}
+			fileContent, err := ioutil.ReadAll(f)
+			if err != nil {
+				fmt.Println("Unable to read log file", err)
+				return
+			}
+			ip, err = ParseIPFromTcpDump(fileContent)
 			if err != nil {
 				fmt.Println(err)
 				return
@@ -45,10 +61,12 @@ var ipCmd = &cobra.Command{
 	},
 }
 var tcpDump bool
+var file string
 
 func init() {
 	rootCmd.AddCommand(ipCmd)
 	ipCmd.Flags().BoolVar(&tcpDump, "tcpdump", false, "Is the source from tcpdump")
+	ipCmd.Flags().StringVarP(&file, "file", "f", "", "source file of tcpdump")
 }
 
 func ParseIPFromTcpDump(tcpDump string) (string, error) {
