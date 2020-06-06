@@ -1,6 +1,7 @@
 package cmd
 
 import (
+	"bufio"
 	"fmt"
 	"io/ioutil"
 	"net/http"
@@ -11,11 +12,11 @@ import (
 )
 
 var ipCmd = &cobra.Command{
-	Use:   "iploc",
+	Use:   "ipinfo",
 	Short: "Fetch the location information of the IP",
 	Run: func(cmd *cobra.Command, args []string) {
 		var ip string
-		var err error
+		//var err error
 		//		if len(args) == 0 {
 		//			fmt.Println("Provide the input")
 		//			return
@@ -31,13 +32,31 @@ var ipCmd = &cobra.Command{
 				fmt.Println("Unable to open log file", err)
 				return
 			}
-			fileContent, err := ioutil.ReadAll(f)
-			if err != nil {
-				fmt.Println("Unable to read log file", err)
-				return
+
+			scanner := bufio.NewScanner(f)
+			for scanner.Scan() {
+				if strings.Contains(scanner.Text(), "IP") {
+					ip, err = ParseIPFromTcpDump(scanner.Text())
+					if err != nil {
+						fmt.Println(err)
+						return
+					}
+
+					resp, err := http.Get(fmt.Sprintf("http://ip-api.com/json/%s", ip))
+					if err != nil {
+						fmt.Println(err)
+						return
+					}
+					defer resp.Body.Close()
+					body, err := ioutil.ReadAll(resp.Body)
+					if err != nil {
+						fmt.Println(err)
+						return
+					}
+					fmt.Println("Details of the requester: ", string(body))
+				}
 			}
-			ip, err = ParseIPFromTcpDump(string(fileContent))
-			if err != nil {
+			if err := scanner.Err(); err != nil {
 				fmt.Println(err)
 				return
 			}
