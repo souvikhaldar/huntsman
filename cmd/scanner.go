@@ -33,10 +33,8 @@ var scanCmd = &cobra.Command{
 			case open := <-openCount:
 				if open != 0 {
 					fmt.Println("Open port: ", open)
-					<-threadPool
-				} else {
-					fmt.Printf("%d is not open\n", open)
 				}
+
 				<-threadPool
 
 			}
