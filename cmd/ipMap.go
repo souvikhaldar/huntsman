@@ -34,31 +34,33 @@ var ipCmd = &cobra.Command{
 			}
 
 			scanner := bufio.NewScanner(f)
-			for scanner.Scan() {
-				if strings.Contains(scanner.Text(), "IP") {
-					ip, err = ParseIPFromTcpDump(scanner.Text())
-					if err != nil {
-						fmt.Println(err)
-						return
-					}
+			for {
+				for scanner.Scan() {
+					if strings.Contains(scanner.Text(), "IP") {
+						ip, err = ParseIPFromTcpDump(scanner.Text())
+						if err != nil {
+							fmt.Println(err)
+							return
+						}
 
-					resp, err := http.Get(fmt.Sprintf("http://ip-api.com/json/%s", ip))
-					if err != nil {
-						fmt.Println(err)
-						return
+						resp, err := http.Get(fmt.Sprintf("http://ip-api.com/json/%s", ip))
+						if err != nil {
+							fmt.Println(err)
+							return
+						}
+						defer resp.Body.Close()
+						body, err := ioutil.ReadAll(resp.Body)
+						if err != nil {
+							fmt.Println(err)
+							return
+						}
+						fmt.Println("Details of the requester: ", string(body))
 					}
-					defer resp.Body.Close()
-					body, err := ioutil.ReadAll(resp.Body)
-					if err != nil {
-						fmt.Println(err)
-						return
-					}
-					fmt.Println("Details of the requester: ", string(body))
 				}
-			}
-			if err := scanner.Err(); err != nil {
-				fmt.Println(err)
-				return
+				if err := scanner.Err(); err != nil {
+					fmt.Println(err)
+					return
+				}
 			}
 		} else {
 			ip = args[0]
