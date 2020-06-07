@@ -4,6 +4,8 @@ A swiss army knife for all things security.
 # Things you can do with huntsman
 1. Fast concurrent port scanning `huntsman scan --target=12.23.121.32`  
 2. Location details of IP or `tcpdump`. `huntsman iploc 12.121.212.32`  
+3. Run a TCP proxy. `huntsman proxy -s <local-port> -t <target-address> -p <target-port>`  
+4. Run a TCP listener. `huntsman listen --port=<port>`  
 
 # Installation 
 1. [Install Golang](https://golang.org/doc/install)    

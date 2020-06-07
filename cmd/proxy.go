@@ -49,11 +49,15 @@ func Proxy(src net.Conn) {
 		return
 	}
 	fmt.Println("Connected to target: ", dest)
-	defer dst.Close()
 	go func() {
 		if _, err := io.Copy(dst, src); err != nil {
 			fmt.Println("Error in proxying data: ", err)
 		}
+		//// echo back the response
+		//if _, err := io.Copy(src, dst); err != nil {
+		//	fmt.Println("Reply the response: ", err)
+		//}
+		dst.Close()
 
 	}()
 }
