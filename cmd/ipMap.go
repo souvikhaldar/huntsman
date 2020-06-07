@@ -63,7 +63,7 @@ var ipCmd = &cobra.Command{
 				}
 			}
 		} else {
-			ip = args[0]
+			ip = ipAdd
 		}
 		fmt.Println("Request came from: ", ip)
 		resp, err := http.Get(fmt.Sprintf("http://ip-api.com/json/%s", ip))
@@ -84,11 +84,13 @@ var ipCmd = &cobra.Command{
 }
 var tcpDump bool
 var file string
+var ipAdd string
 
 func init() {
 	rootCmd.AddCommand(ipCmd)
 	ipCmd.Flags().BoolVar(&tcpDump, "tcpdump", false, "Is the source from tcpdump")
 	ipCmd.Flags().StringVarP(&file, "file", "f", "", "source file of tcpdump")
+	ipCmd.Flags().StringVar(&ipAdd, "ip", "", "IP address of the target")
 }
 
 func ParseIPFromTcpDump(tcpDump string) (string, error) {
