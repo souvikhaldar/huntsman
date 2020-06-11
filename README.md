@@ -26,3 +26,26 @@ P.S- The log file was populated by:
 tcpdump -s 0 -A 'tcp[((tcp[12:1] & 0xf0) >> 2):4] = 0x47455420' > server.log
 ```
 The above command was run on the server where HTTP service was running on port 80.
+
+# Path
+- [x] Port scanner    
+- [x] IP information  
+- [x] TCP proxy    
+- [x] TCP listener  
+- [x] HTTP server  
+- [ ] Exploiting DNS  
+- [ ] VirusTotal API functionality  
+- [ ] SMB and NTLM expotation  
+- [ ] Abusing Databases  
+- [ ] Packet processing  
+- [ ] Fuzzing and shellcode  
+- [ ] Cryptography  
+- [ ] Windows system analysis  
+- [ ] steganography  
+- [ ] CNC RAT  
+
+# Inspiration
+The inspiration of this tool is primarily the following two sources:
+1. Pursuing [Advanced Exercutive Program in Cyber Security and Cyber Defense](https://iitk.talentsprint.com/cybersecurity/) at the esteemed [c3i](https://security.cse.iitk.ac.in/) institution of [IIT Kanpur](https://www.iitk.ac.in/) and Professor [Sandeep Shukla](https://www.cse.iitk.ac.in/users/sandeeps/).  
+2. The excellent book [Black Hat Go: Go Programming For Hackers and Pentesters](https://www.amazon.in/Black-Hat-Go-Programming-Pentesters-ebook/dp/B073NPY29N) by Tom Steele, Chris Patten and Dan Kottmann. 
+
