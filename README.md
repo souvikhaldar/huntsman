@@ -45,7 +45,7 @@ The above command was run on the server where HTTP service was running on port 8
 - [ ] CNC RAT  
 
 # Inspiration
-The inspiration of this tool is primarily the following two sources:
-1. Pursuing [Advanced Exercutive Program in Cyber Security and Cyber Defense](https://iitk.talentsprint.com/cybersecurity/) at the esteemed [c3i](https://security.cse.iitk.ac.in/) institution of [IIT Kanpur](https://www.iitk.ac.in/) and Professor [Sandeep Shukla](https://www.cse.iitk.ac.in/users/sandeeps/).  
+The inspiration of this tool are primarily the following two sources:
+1. Pursuing [Advanced Exercutive Program in Cyber Security and Cyber Defense](https://talentsprint.com/pages/wip/iit-kanpur/v2.5/index.html) at the esteemed [c3i](https://security.cse.iitk.ac.in/) institution of [IIT Kanpur](https://www.iitk.ac.in/) and Professor [Sandeep Shukla](https://www.cse.iitk.ac.in/users/sandeeps/).  
 2. The excellent book [Black Hat Go: Go Programming For Hackers and Pentesters](https://www.amazon.in/Black-Hat-Go-Programming-Pentesters-ebook/dp/B073NPY29N) by Tom Steele, Chris Patten and Dan Kottmann. 
 
