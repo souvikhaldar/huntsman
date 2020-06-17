@@ -27,6 +27,13 @@ tcpdump -s 0 -A 'tcp[((tcp[12:1] & 0xf0) >> 2):4] = 0x47455420' > server.log
 ```
 The above command was run on the server where HTTP service was running on port 80.
 
+# Static code analysis of Huntsman 
+1. Run sonar-qube `docker run -d --name sonarqube -p 9000:9000 sonarqube`  
+2. Install `gosec`- `go get github.com/securego/gosec/cmd/gosec`  
+3. `./sonarGosec.sh`  
+
+
+
 # Path
 - [x] Port scanner    
 - [x] IP information  

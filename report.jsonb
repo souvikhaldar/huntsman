@@ -1,0 +1,49 @@
+{
+	"issues": [
+		{
+			"engineId": "gosec",
+			"ruleId": "G304",
+			"primaryLocation": {
+				"message": "Potential file inclusion via variable",
+				"filePath": "/Users/souvik/Development/go/src/github.com/souvikhaldar/huntsman/ipMap.go",
+				"textRange": {
+					"startLine": 30,
+					"endLine": 30
+				}
+			},
+			"type": "VULNERABILITY",
+			"severity": "MAJOR",
+			"effortMinutes": 5
+		},
+		{
+			"engineId": "gosec",
+			"ruleId": "G104",
+			"primaryLocation": {
+				"message": "Errors unhandled.",
+				"filePath": "/Users/souvik/Development/go/src/github.com/souvikhaldar/huntsman/listener.go",
+				"textRange": {
+					"startLine": 41,
+					"endLine": 41
+				}
+			},
+			"type": "VULNERABILITY",
+			"severity": "MINOR",
+			"effortMinutes": 5
+		},
+		{
+			"engineId": "gosec",
+			"ruleId": "G104",
+			"primaryLocation": {
+				"message": "Errors unhandled.",
+				"filePath": "/Users/souvik/Development/go/src/github.com/souvikhaldar/huntsman/proxy.go",
+				"textRange": {
+					"startLine": 60,
+					"endLine": 60
+				}
+			},
+			"type": "VULNERABILITY",
+			"severity": "MINOR",
+			"effortMinutes": 5
+		}
+	]
+}
