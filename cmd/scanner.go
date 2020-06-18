@@ -13,7 +13,7 @@ var start int32
 var end int32
 var threads int32
 var scanCmd = &cobra.Command{
-	Use:   "scan",
+	Use:   "portScan",
 	Short: "Scan for open ports",
 	Long:  "Concurrently scan the provided range (by default 0 to 65535) to check if any port is open",
 	Run: func(cmd *cobra.Command, args []string) {
@@ -27,18 +27,16 @@ var scanCmd = &cobra.Command{
 					isOpen(address, openCount, port)
 				}(address, openCount, i)
 			}
+			close(openCount)
 		}(threadPool, openCount)
-		for {
-			select {
-			case open := <-openCount:
-				if open != 0 {
-					fmt.Println("Open port: ", open)
-				}
-
-				<-threadPool
-
+		for open := range openCount {
+			if open != 0 {
+				fmt.Println("Open port: ", open)
 			}
+
+			<-threadPool
 		}
+
 	},
 }
 
@@ -55,5 +53,5 @@ func init() {
 	scanCmd.Flags().StringVar(&target, "target", "", "IP/URL address of the machine to be scanned")
 	scanCmd.Flags().Int32VarP(&start, "start", "s", 1, "starting port number")
 	scanCmd.Flags().Int32VarP(&end, "end", "e", 65535, "last port number")
-	scanCmd.Flags().Int32Var(&threads, "threads", 100, "the number of goroutines to execute at a time")
+	scanCmd.Flags().Int32VarP(&threads, "threads", "t", 100, "the number of goroutines to execute at a time")
 }
