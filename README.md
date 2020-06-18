@@ -2,7 +2,24 @@
 A swiss army knife for all things security.
 
 # Things you can do with huntsman
-1. Fast concurrent port scanning `huntsman scan --target=12.23.121.32`  
+1. Fast concurrent port scanning  
+``` 
+huntsman portScan --help
+Concurrently scan the provided range (by default 0 to 65535) to check if any port is open
+
+Usage:
+  huntsman portScan [flags]
+
+Flags:
+  -e, --end int32       last port number (default 65535)
+  -h, --help            help for portScan
+  -s, --start int32     starting port number (default 1)
+      --target string   IP/URL address of the machine to be scanned
+  -t, --threads int32   the number of goroutines to execute at a time (default 100)
+```
+
+Example:  
+`huntsman portScan --target abc.com`  
 2. Location details of IP or `tcpdump`. `huntsman ipinfo --ip=12.121.212.32`  
 3. Run a TCP proxy. `huntsman proxy -s <local-port> -t <target-address> -p <target-port>`  
 4. Run a TCP listener. `huntsman listen --port=<port>`  
