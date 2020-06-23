@@ -22,10 +22,9 @@ var scanCmd = &cobra.Command{
 		go func(threadPool chan int, openCount chan int) {
 			for i := start; i <= end; i++ {
 				threadPool <- 1
-				address := target + ":" + strconv.Itoa(int(i))
-				go func(address string, threadCount chan int, port int32) {
-					isOpen(address, openCount, port)
-				}(address, openCount, i)
+				go func(target string, threadCount chan int, port int32) {
+					isOpen(target, openCount, port)
+				}(target, openCount, i)
 			}
 			close(openCount)
 		}(threadPool, openCount)
@@ -40,10 +39,14 @@ var scanCmd = &cobra.Command{
 	},
 }
 
-func isOpen(address string, openCount chan int, port int32) {
+func isOpen(target string, openCount chan int, port int32) {
+
+	address := target + ":" + strconv.Itoa(int(port))
 	if _, err := net.Dial("tcp", address); err == nil {
 		openCount <- int(port)
+		fmt.Println("Open port: ", port)
 	}
+	fmt.Println("Closed port: ", port)
 	openCount <- 0
 }
 

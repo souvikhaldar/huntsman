@@ -15,19 +15,9 @@ var ipCmd = &cobra.Command{
 	Use:   "ipinfo",
 	Short: "Fetch the location information of the IP",
 	Run: func(cmd *cobra.Command, args []string) {
-		var ip string
-		//var err error
-		//		if len(args) == 0 {
-		//			fmt.Println("Provide the input")
-		//			return
-		//		}
-		//		fmt.Println("input is: ", args[0])
-		if tcpDump {
-			if file == "" {
-				fmt.Println("tcpdump log file source not provided")
-				return
-			}
-			f, err := os.Open(file)
+
+		if tcpDump != "" {
+			f, err := os.Open(tcpDump)
 			if err != nil {
 				fmt.Println("Unable to open log file", err)
 				return
@@ -37,24 +27,21 @@ var ipCmd = &cobra.Command{
 			for {
 				for scanner.Scan() {
 					if strings.Contains(scanner.Text(), "IP") {
-						ip, err = ParseIPFromTcpDump(scanner.Text())
+						ip, err := ParseIPFromTcpDump(scanner.Text())
+						if err != nil {
+							fmt.Println(err)
+							return
+						}
+						fmt.Println("Request came from: ", ip)
+						body, err := getIPInfo(ip)
 						if err != nil {
 							fmt.Println(err)
 							return
 						}
 
-						resp, err := http.Get(fmt.Sprintf("http://ip-api.com/json/%s", ip))
-						if err != nil {
-							fmt.Println(err)
-							return
-						}
-						defer resp.Body.Close()
-						body, err := ioutil.ReadAll(resp.Body)
-						if err != nil {
-							fmt.Println(err)
-							return
-						}
-						fmt.Println("Details of the requester: ", string(body))
+						fmt.Println(
+							"Details of the requester: ",
+							string(body))
 					}
 				}
 				if err := scanner.Err(); err != nil {
@@ -63,33 +50,39 @@ var ipCmd = &cobra.Command{
 				}
 			}
 		} else {
-			ip = ipAdd
+			body, err := getIPInfo(ipAdd)
+			if err != nil {
+				fmt.Println(err)
+				return
+			}
+			fmt.Println("Details of the requester: ", string(body))
 		}
-		fmt.Println("Request came from: ", ip)
-		resp, err := http.Get(fmt.Sprintf("http://ip-api.com/json/%s", ip))
-		if err != nil {
-			fmt.Println(err)
-			return
-		}
-		defer resp.Body.Close()
-		body, err := ioutil.ReadAll(resp.Body)
-		if err != nil {
-			fmt.Println(err)
-			return
-		}
-		fmt.Println("Details of the requester: ", string(body))
-		return
 
 	},
 }
-var tcpDump bool
-var file string
+
+func getIPInfo(ip string) ([]byte, error) {
+
+	resp, err := http.Get(fmt.Sprintf("http://ip-api.com/json/%s", ip))
+	if err != nil {
+		fmt.Println(err)
+		return []byte{}, err
+	}
+	defer resp.Body.Close()
+	body, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		fmt.Println(err)
+		return body, err
+	}
+	return body, err
+}
+
+var tcpDump string
 var ipAdd string
 
 func init() {
 	rootCmd.AddCommand(ipCmd)
-	ipCmd.Flags().BoolVar(&tcpDump, "tcpdump", false, "Is the source from tcpdump")
-	ipCmd.Flags().StringVarP(&file, "file", "f", "", "source file of tcpdump")
+	ipCmd.Flags().StringVarP(&tcpDump, "tcp-dump", "t", "", "source file of tcpdump")
 	ipCmd.Flags().StringVar(&ipAdd, "ip", "", "IP address of the target")
 }
 
