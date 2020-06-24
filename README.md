@@ -20,9 +20,10 @@ Flags:
 
 Example:  
 `huntsman portScan --target abc.com`  
+
 2. Location details of IP or `tcpdump`. `huntsman ipinfo --ip=12.121.212.32`  
-    *  [![asciicast](https://asciinema.org/a/342086.svg)](https://asciinema.org/a/342086)
-    *  Providing tcpdump log:  
+    [![asciicast](https://asciinema.org/a/342086.svg)](https://asciinema.org/a/342086)
+    ### Providing tcpdump log:  
         Parsing location info from log file of `tcpdump`
         ```
         huntsman iploc --tcp-dump server.log
