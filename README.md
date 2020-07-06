@@ -47,6 +47,7 @@ Example:
 2. `git clone git@github.com:souvikhaldar/huntsman.git`
 3. `cd huntsman`  
 4. `go install`  
+
 **OR**
 
 Download the binary of your choice from the `download` directory and run it directly. 
