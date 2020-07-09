@@ -46,8 +46,12 @@ Example:
 1. [Install Golang](https://golang.org/doc/install)    
 2. `git clone git@github.com:souvikhaldar/huntsman.git`
 3. `cd huntsman`  
-4. `go install`
+4. `go install`  
 
+**OR**
+
+Download the binary of your choice from the `download` directory and run it directly. 
+Shoutout to [go installer](https://github.com/souvikhaldar/scripts/blob/master/goinstaller.py)
 
 # Static code analysis of Huntsman 
 1. Run sonar-qube `docker run -d --name sonarqube -p 9000:9000 sonarqube`  
