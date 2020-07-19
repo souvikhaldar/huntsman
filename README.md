@@ -4,11 +4,12 @@ A swiss army knife for all things security.
 # Complete guide
 [1. Installation](https://github.com/souvikhaldar/huntsman/blob/master/guide.md#installation)  
 [2. Reverse shell](https://github.com/souvikhaldar/huntsman/blob/master/guide.md#reverse-shell)
+[3. Concurrent port scanning](https://github.com/souvikhaldar/huntsman/blob/master/guide.md#fast-concurrent-port-scanning)  
+[4. IP location details](https://github.com/souvikhaldar/huntsman/blob/master/guide.md#location-details-of-ip-or-tcpdump)  
+[5. TCP proxy](https://github.com/souvikhaldar/huntsman/blob/master/guide.md#run-a-tcp-proxy)  
+[6. TCP Listener](https://github.com/souvikhaldar/huntsman/blob/master/guide.md#run-a-tcp-listener)  
 
-# Things you can do with huntsman
-2. 
-3. 
-4. Run a TCP listener. `huntsman listen --port=<port>`  
+
 
 # Static code analysis of Huntsman 
 1. Run sonar-qube `docker run -d --name sonarqube -p 9000:9000 sonarqube`  

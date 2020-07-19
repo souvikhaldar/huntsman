@@ -59,8 +59,10 @@ Example:
 
     [![asciicast](https://asciinema.org/a/342086.svg)](https://asciinema.org/a/342086)
 
-    ## Providing tcpdump log:  
+  	Providing tcpdump log:   
+
         Parsing location info from log file of `tcpdump`
+
         ```
         huntsman iploc --tcp-dump server.log
         Request came from:  fwdproxy-frc-003.fbsv.net
