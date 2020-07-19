@@ -1,4 +1,4 @@
-#Installation
+# Installation
 There multiple ways in which you can install `huntsman` on your machine or a target machine.  
 1. Install it using golang compiler using `go install` or `go build`
 2. Copy the binary from `/download` directory on $PATH.  
