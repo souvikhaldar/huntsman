@@ -1,6 +1,9 @@
 # Huntsman
 A swiss army knife for all things security.
 
+# Complete guide
+[1. Installation](./goinstaller.py --target ./download --os popular --arch amd64)
+
 # Things you can do with huntsman
 1. Fast concurrent port scanning  
 ``` 
