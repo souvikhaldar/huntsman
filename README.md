@@ -2,7 +2,7 @@
 A swiss army knife for all things security.
 
 # Complete guide
-[1. Installation](./goinstaller.py --target ./download --os popular --arch amd64)
+[1. Installation](https://github.com/souvikhaldar/huntsman/blob/master/guide.md#installation)
 
 # Things you can do with huntsman
 1. Fast concurrent port scanning  
