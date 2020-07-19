@@ -55,9 +55,10 @@ Example:
 `huntsman portScan --target abc.com`  
 
 # Location details of IP or tcpdump  
-``huntsman ipinfo --ip=12.121.212.32`  
 
-    [![asciicast](https://asciinema.org/a/342086.svg)](https://asciinema.org/a/342086)
+`huntsman ipinfo --ip=12.121.212.32`  
+
+[![asciicast](https://asciinema.org/a/342086.svg)](https://asciinema.org/a/342086)
 
   	Providing tcpdump log:   
 
@@ -77,9 +78,13 @@ Example:
         
         The above command was run on the server where HTTP service was running on port 80.
 
-# Run a TCP proxy. 
+# Run a TCP proxy
 
-`huntsman proxy -s <local-port> -t <target-address> -p <target-port>`  
+`huntsman proxy -s <local-port> -t <target-address> -p <target-port>`   
+
+# Run a TCP listener
+
+`huntsman listen --port=<port>`
 
 
 # Reverse shell
