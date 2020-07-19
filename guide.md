@@ -35,8 +35,9 @@ First you need to compile the binary for the target machine using the
 `goinstaller.py` or anything of choice. Then preferably use `scp` to transfer
 the binary to the target machine (see `Installation` section) then execute it
 using `./<binary-name> reverseshell --port <port-number>`. Now the listener is
-running to which you will be sending instructions to execute.  
+running to which you will be sending instructions to execute.   
+
 We will be using [netcat](http://netcat.sourceforge.net/) as the client for 
-sending the commands over the network.
+sending the commands over the network.  
 `nc <address-of-target> <port-number>`  
 [Youtube link for the video demonstration](https://youtu.be/eE0k0GVZXyc)
