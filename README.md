@@ -11,13 +11,6 @@ A swiss army knife for all things security.
 
 
 
-# Static code analysis of Huntsman 
-1. Run sonar-qube `docker run -d --name sonarqube -p 9000:9000 sonarqube`  
-2. Install `gosec`- `go get github.com/securego/gosec/cmd/gosec`  
-3. `./sonarGosec.sh`  
-
-
-
 # Path
 - [x] Port scanner    
 - [x] IP information  
