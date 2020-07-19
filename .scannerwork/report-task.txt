@@ -1,6 +1,0 @@
-projectKey=huntsman-cscd
-serverUrl=http://192.168.0.250:9000
-serverVersion=8.3.1.34397
-dashboardUrl=http://192.168.0.250:9000/dashboard?id=huntsman-cscd
-ceTaskId=AXLDeajgsRUJzMEW65se
-ceTaskUrl=http://192.168.0.250:9000/api/ce/task?id=AXLDeajgsRUJzMEW65se
