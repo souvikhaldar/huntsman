@@ -71,7 +71,11 @@ for goos,arch in envs.items():
         for val in arch:
             if val not in arch_opt:
                 continue
-            cmd = "cd {};env GOOS={} GOARCH={} go build -o {}/{}_{}".format(
+            if goos == "windows":
+                cmd = "cd {};env GOOS={} GOARCH={} go build -o {}/{}_{}.exe".format(
+                args.source,goos,val,args.target,goos,val)
+            else:
+                cmd = "cd {};env GOOS={} GOARCH={} go build -o {}/{}_{}".format(
                 args.source,goos,val,args.target,goos,val)
             if os.system(cmd) != 0:
                 print("Execution failed")
