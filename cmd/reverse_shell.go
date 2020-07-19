@@ -40,6 +40,7 @@ var rsCmd = &cobra.Command{
 }
 
 func handle(conn net.Conn) {
+	defer conn.Close()
 	var cmd *exec.Cmd
 	if runtime.GOOS == "windows" {
 		cmd = exec.Command("cmd.exe")
@@ -56,7 +57,11 @@ func handle(conn net.Conn) {
 			fmt.Println("Error in copying the stdout: ", err)
 		}
 	}()
-	conn.Close()
+	if err := cmd.Run(); err != nil {
+		fmt.Println("Error in executing the command: ", err)
+		return
+	}
+	return
 }
 func init() {
 	rootCmd.AddCommand(rsCmd)

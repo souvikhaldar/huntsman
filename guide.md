@@ -4,7 +4,7 @@ There multiple ways in which you can install `huntsman` on your machine or a tar
 2. Copy the binary from `/download` directory on $PATH.  
 3. Use the `goinstaller.py` script.  
 	```
-	./goinstaller.py --help        ✔  4453  13:50:39
+	./goinstaller.py --help 
 	Install go program for multiple OS and multiple architectures
 	Run goinstaller.py --help for all options
 	usage: goinstaller.py [-h]
@@ -23,3 +23,9 @@ There multiple ways in which you can install `huntsman` on your machine or a tar
 	```
 	Eg. Compiling for **popular** OSes like Windows, Microsoft and Linux for 64-bit architecture can be done using
 	`./goinstaller.py --target ./download --os popular --arch amd64`
+
+# Transfer to a target
+Once you've compiled huntsman for the target OS and arch, you can transfer it 
+using `scp` or any tool of choice:  
+Eg, transfering linux binary to target machine:  
+`scp ./download/linux_amd64 username@address:location`
