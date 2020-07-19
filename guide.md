@@ -75,9 +75,13 @@ Example:
         
         The above command was run on the server where HTTP service was running on port 80.
 
-# Run a TCP proxy. 
+# Run a TCP proxy
 
-`huntsman proxy -s <local-port> -t <target-address> -p <target-port>`  
+`huntsman proxy -s <local-port> -t <target-address> -p <target-port>`   
+
+# Run a TCP listener
+
+`huntsman listen --port=<port>`
 
 
 # Reverse shell
