@@ -2,12 +2,12 @@
 A swiss army knife for all things security.
 
 # Complete guide
-[1. Installation](https://github.com/souvikhaldar/huntsman/blob/master/guide.md#installation)   
-[2. Reverse shell](https://github.com/souvikhaldar/huntsman/blob/master/guide.md#reverse-shell)  
-[3. Concurrent port scanning](https://github.com/souvikhaldar/huntsman/blob/master/guide.md#fast-concurrent-port-scanning)    
-[4. IP location details](https://github.com/souvikhaldar/huntsman/blob/master/guide.md#location-details-of-ip-or-tcpdump)  
-[5. TCP proxy](https://github.com/souvikhaldar/huntsman/blob/master/guide.md#run-a-tcp-proxy)   
-[6. TCP Listener](https://github.com/souvikhaldar/huntsman/blob/master/guide.md#run-a-tcp-listener)   
+[1. Installation](https://github.com/souvikhaldar/huntsman#installation)   
+[2. Reverse shell](https://github.com/souvikhaldar/huntsman#reverse-shell)  
+[3. Concurrent port scanning](https://github.com/souvikhaldar/huntsman#fast-concurrent-port-scanning)    
+[4. IP location details](https://github.com/souvikhaldar/huntsman#location-details-of-ip-or-tcpdump)  
+[5. TCP proxy](https://github.com/souvikhaldar/huntsman#run-a-tcp-proxy)   
+[6. TCP Listener](https://github.com/souvikhaldar/huntsman#run-a-tcp-listener)   
 
 
 
