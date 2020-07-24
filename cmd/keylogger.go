@@ -52,8 +52,8 @@ var KeyCmd = &cobra.Command{
 
 func init() {
 	rootCmd.AddCommand(KeyCmd)
-	KeyCmd.Flags().StringVarP(&wsAddr, "ws-addr", "w", "localhost:8195", "address of the websocket server")
-	KeyCmd.Flags().StringVarP(&listenerPort, "listener-port", "l", "8195", `
+	KeyCmd.Flags().StringVarP(&wsAddr, "ws-addr", "w", "localhost:8192", "address of the websocket server")
+	KeyCmd.Flags().StringVarP(&listenerPort, "listener-port", "l", "8192", `
 	The port at which the listener server should run on this machine
 	`)
 	jsTemplate, err = template.ParseFiles("static/logger.js")
