@@ -137,3 +137,8 @@ We will be using [netcat](http://netcat.sourceforge.net/) as the client for
 sending the commands over the network.  
 `nc <address-of-target> <port-number>`  
 [Youtube link for the video demonstration](https://youtu.be/eE0k0GVZXyc)
+
+# Keylogger 
+A keylogger can log the keystrokes made by a user ,typically on a website. The logged keystrokes most of times are crucial credentials of the users. Hackers use Credential Harvester (like keylogger) to steal your credentials.
+Huntsman is the tool that contains a keylogger as well.   
+Eg. `huntsman keylogger -w localhost:8192 -l 8192`   
