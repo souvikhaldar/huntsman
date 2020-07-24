@@ -19,6 +19,7 @@ A swiss army knife for all things security.
 - [x] TCP listener  
 - [x] HTTP server  
 - [x] Reverse Shell listener  
+- [x] Keylogger  
 - [ ] Exploiting DNS  
 - [ ] VirusTotal API functionality  
 - [ ] SMB and NTLM expotation  
