@@ -1,5 +1,6 @@
 # Huntsman
 A swiss army knife for all things security.
+https://souvikhaldar.github.io/huntsman/
 
 # Complete guide
 [1.Installation](https://github.com/souvikhaldar/huntsman#installation)   
