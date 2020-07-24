@@ -139,6 +139,11 @@ sending the commands over the network.
 [Youtube link for the video demonstration](https://youtu.be/eE0k0GVZXyc)
 
 # Keylogger 
-A keylogger can log the keystrokes made by a user ,typically on a website. The logged keystrokes most of times are crucial credentials of the users. Hackers use Credential Harvester (like keylogger) to steal your credentials.
-Huntsman is the tool that contains a keylogger as well.   
+A keylogger can log the keystrokes made by a user ,typically on a website. The logged keystrokes most of the times are crucial credentials of the users. Hackers use Credential Harvester (like keylogger) to steal your credentials.
+Huntsman is the tool that contains a keylogger as well.    
 Eg. `huntsman keylogger -w localhost:8192 -l 8192`   
+
+This video is the demonstration for using huntsman as a keylogger. [Link to youtube video](https://youtu.be/BoPICq1MVhA)
+
+
+
