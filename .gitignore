@@ -1,6 +1,5 @@
 sample-install-script.sh
 *.swp
 *.out
-sonar-project.properties
-sonar-project.properties.backup
+config.json
 

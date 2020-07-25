@@ -13,8 +13,7 @@ var rootCmd = &cobra.Command{
 	Long:  "A blazing fast swissknife for doing versatile security work like concurrent port scanning, tcp proxy, etc",
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("Welcome home, huntsman!")
-		fmt.Println(`All of your weapons are well sharpened and ready to be used.
-		Try huntsman --help to have a look at your arsenal`)
+		fmt.Println(`All of your weapons are well sharpened and ready to be used.Try huntsman --help to have a look at your arsenal`)
 	},
 }
 

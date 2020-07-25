@@ -3,6 +3,7 @@ package db
 import (
 	"context"
 	"fmt"
+	"huntsman/config"
 
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
@@ -11,19 +12,18 @@ import (
 var MongoClient *mongo.Client
 var MongoIPCollection *mongo.Collection
 
-func InitializeMongoDB() {
+func InitializeMongoDB(con config.Config) error {
 	// create the mongodb client
-	clientOptions := options.Client().ApplyURI(
-		"mongodb+srv://souvikhaldar:Pl%40y1tMongo@cluster0.fe2ea.mongodb.net/huntsman?retryWrites=true&w=majority",
-	)
+	clientOptions := options.Client().ApplyURI(con.MongoURI)
 	MongoClient, err := mongo.Connect(context.TODO(), clientOptions)
 	if err != nil {
 		fmt.Println("Failed to create mongo db connection: ", err)
-		return
+		return err
 	}
 	if err := MongoClient.Ping(context.TODO(), nil); err != nil {
 		fmt.Println("Failed to ping mongo db instance: ", err)
-		return
+		return err
 	}
-	MongoIPCollection = MongoClient.Database("huntsman").Collection("ipdata")
+	MongoIPCollection = MongoClient.Database(con.MongoDatabase).Collection(con.MongoCollection)
+	return nil
 }

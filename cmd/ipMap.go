@@ -5,6 +5,7 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+	"huntsman/config"
 	mongodb "huntsman/db"
 	"io/ioutil"
 	"log"
@@ -35,10 +36,33 @@ type Response struct {
 	Hits        int32   `json:"hits"`
 }
 
+var tcpDump string
+var ipAdd string
+var readStream bool
+var conf string
+var persist bool
+
+func init() {
+	rootCmd.AddCommand(ipCmd)
+	ipCmd.Flags().StringVarP(&tcpDump, "tcp-dump", "t", "", "source file of tcpdump")
+	ipCmd.Flags().StringVar(&ipAdd, "ip", "", "IP address of the target")
+	ipCmd.Flags().BoolVarP(&readStream, "read-stream", "s", false, "Do you want to read from tcpdump output contineously?")
+
+	ipCmd.PersistentFlags().StringVarP(&conf, "config", "c", "", "The path to the configuration JSON file")
+	ipCmd.Flags().BoolVarP(&persist, "persist", "p", false, "Do you want to store the response to mongo? If yes, please provide value to --config flag")
+}
+
 var ipCmd = &cobra.Command{
 	Use:   "ipinfo",
 	Short: "Fetch the location information of the IP",
 	Run: func(cmd *cobra.Command, args []string) {
+		var con config.Config
+		if persist {
+			con = config.SetEnv(conf)
+			if err := mongodb.InitializeMongoDB(con); err != nil {
+				log.Fatal(err)
+			}
+		}
 
 		ipCache := make(map[string]*Response)
 		if readStream {
@@ -91,7 +115,7 @@ var ipCmd = &cobra.Command{
 
 			return
 		}
-		mongodb.InitializeMongoDB()
+
 		if tcpDump != "" {
 			f, err := os.Open(tcpDump)
 			if err != nil {
@@ -117,16 +141,39 @@ var ipCmd = &cobra.Command{
 								cacheRes)
 							continue
 						}
-						body, err := getIPInfo(ip)
+						response, err := getIPInfo(ip)
 						if err != nil {
 							fmt.Println(err)
 							return
 						}
-						ipCache[ip] = &body
+						ipCache[ip] = &response
 
 						fmt.Printf(
 							"Details of the IP:\n %+v \n",
-							body)
+							response)
+
+						if !persist {
+							return
+						}
+						_, err = mongodb.MongoIPCollection.UpdateOne(
+							context.TODO(),
+							bson.D{
+								{"query", response.Query},
+							},
+							bson.D{
+								{
+									"$inc", bson.D{
+										{"hits", 1},
+									},
+								},
+							},
+						)
+						if err != nil {
+							fmt.Println("Could not update: ", err)
+							return
+						}
+						fmt.Println("Updated to mongo")
+
 					}
 				}
 				if err := scanner.Err(); err != nil {
@@ -134,41 +181,45 @@ var ipCmd = &cobra.Command{
 					return
 				}
 			}
-		} else {
-			response, err := getIPInfo(ipAdd)
-			if err != nil {
-				fmt.Println(err)
-				return
-			}
-			fmt.Printf("Details of the IP:\n %+v \n", response)
-			//if insertRes, err := mongodb.MongoIPCollection.InsertOne(
-			//	context.TODO(),
-			//	response,
-			//); err != nil {
-			//	fmt.Println("Error in inserting to mongo: ", err)
-			//} else {
-			//	fmt.Println("Insert ID: ", insertRes.InsertedID)
-			//}
-			updateRes, err := mongodb.MongoIPCollection.UpdateOne(
-				context.TODO(),
-				bson.D{
-					{"query", response.Query},
-				},
-				bson.D{
-					{
-						"$inc", bson.D{
-							{"hits", 1},
-						},
+			return
+		}
+
+		// plain IP passing
+		response, err := getIPInfo(ipAdd)
+		if err != nil {
+			fmt.Println(err)
+			return
+		}
+		fmt.Printf("Details of the IP:\n %+v \n", response)
+		//if insertRes, err := mongodb.MongoIPCollection.InsertOne(
+		//	context.TODO(),
+		//	response,
+		//); err != nil {
+		//	fmt.Println("Error in inserting to mongo: ", err)
+		//} else {
+		//	fmt.Println("Insert ID: ", insertRes.InsertedID)
+		//}
+		if !persist {
+			return
+		}
+		_, err = mongodb.MongoIPCollection.UpdateOne(
+			context.TODO(),
+			bson.D{
+				{"query", response.Query},
+			},
+			bson.D{
+				{
+					"$inc", bson.D{
+						{"hits", 1},
 					},
 				},
-			)
-			if err != nil {
-				fmt.Println("Could not update: ", err)
-				return
-			}
-			fmt.Println("Update ID: ", updateRes.MatchedCount,
-				updateRes.ModifiedCount)
+			},
+		)
+		if err != nil {
+			fmt.Println("Could not update: ", err)
+			return
 		}
+		fmt.Println("Updated to mongo")
 
 	},
 }
@@ -192,17 +243,6 @@ func getIPInfo(ip string) (Response, error) {
 		return response, err
 	}
 	return response, err
-}
-
-var tcpDump string
-var ipAdd string
-var readStream bool
-
-func init() {
-	rootCmd.AddCommand(ipCmd)
-	ipCmd.Flags().StringVarP(&tcpDump, "tcp-dump", "t", "", "source file of tcpdump")
-	ipCmd.Flags().StringVar(&ipAdd, "ip", "", "IP address of the target")
-	ipCmd.Flags().BoolVarP(&readStream, "read-stream", "s", false, "Do you want to read from tcpdump output contineously?")
 }
 
 func ParseIPFromTcpDump(tcpDump string) (string, error) {

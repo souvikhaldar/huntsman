@@ -51,7 +51,6 @@ func isOpen(target string, openCount chan int, port int32) {
 }
 
 func init() {
-
 	rootCmd.AddCommand(scanCmd)
 	scanCmd.Flags().StringVar(&target, "target", "", "IP/URL address of the machine to be scanned")
 	scanCmd.Flags().Int32VarP(&start, "start", "s", 1, "starting port number")
