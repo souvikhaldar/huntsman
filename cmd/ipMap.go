@@ -76,34 +76,100 @@ var ipCmd = &cobra.Command{
 			scanner := bufio.NewScanner(stdOut)
 			go func() {
 				for scanner.Scan() {
+					var response Response
+					if !strings.Contains(scanner.Text(), "IP") {
+						continue
+					}
 
-					if strings.Contains(scanner.Text(), "IP") {
-						ip, err := ParseIPFromTcpDump(scanner.Text())
-						if err != nil {
-							fmt.Println(err)
-							return
-						}
-						fmt.Println("Request came from: ", ip)
-						if cacheRes, ok := ipCache[ip]; ok {
-							fmt.Println("Cache hit")
-							cacheRes.Hits += 1
-							fmt.Printf(
-								"Details of the IP:\n %+v \n",
-								cacheRes)
-							continue
-						}
-						body, err := getIPInfo(ip)
-						if err != nil {
-							fmt.Println(err)
-							return
-						}
-						// insert to cache
-						ipCache[ip] = &body
+					ip, err := ParseIPFromTcpDump(scanner.Text())
+					if err != nil {
+						fmt.Println(err)
+						continue
+					}
+					fmt.Println("Request came from: ", ip)
+
+					if cacheRes, ok := ipCache[ip]; ok {
+						fmt.Println("Cache hit")
+						cacheRes.Hits += 1
 						fmt.Printf(
 							"Details of the IP:\n %+v \n",
-							body)
+							cacheRes)
+
+						if !persist || cacheRes.Status == "fail" || len(cacheRes.Status) == 0 {
+							fmt.Println("Can't store to db")
+							continue
+						}
+
+						_, err := mongodb.MongoIPCollection.UpdateOne(
+							context.TODO(),
+							bson.D{
+								{"query", cacheRes.Query},
+							},
+							bson.D{
+								{
+									"$inc", bson.D{
+										{"hits", 1},
+									},
+								},
+							},
+						)
+						if err != nil {
+							fmt.Println("Could not update: ", err)
+							continue
+						}
+						fmt.Println("Updated in mongo")
+						continue
 					}
-					fmt.Println("------------------------")
+
+					response, err = getIPInfo(ip)
+					if err != nil {
+						fmt.Println(err)
+						return
+					}
+					// insert to cache
+					ipCache[ip] = &response
+					fmt.Printf(
+						"Details of the IP:\n %+v \n",
+						response)
+
+					if !persist || response.Status == "fail" || len(response.Status) == 0 {
+						return
+					}
+
+					updateRes, err := mongodb.MongoIPCollection.UpdateOne(
+						context.TODO(),
+						bson.D{
+							{"query", response.Query},
+						},
+						bson.D{
+							{
+								"$inc", bson.D{
+									{"hits", 1},
+								},
+							},
+						},
+					)
+					if err != nil {
+						fmt.Println("Could not update: ", err)
+						continue
+					}
+					fmt.Println("Updated: ", updateRes.UpsertedCount)
+					if updateRes.UpsertedCount > 0 {
+						fmt.Println("Updated to mongo")
+						continue
+
+					}
+
+					response.Hits = 1
+					if _, err := mongodb.MongoIPCollection.InsertOne(
+						context.TODO(),
+						response,
+					); err != nil {
+						fmt.Println("Error in inserting to mongo: ", err)
+					} else {
+						fmt.Println("Inserted to mongo")
+					}
+					fmt.Println("-----------------------")
 				}
 			}()
 			if err := cmd.Start(); err != nil {
@@ -139,6 +205,24 @@ var ipCmd = &cobra.Command{
 							fmt.Printf(
 								"Details of the IP:\n %+v \n",
 								cacheRes)
+
+							_, err := mongodb.MongoIPCollection.UpdateOne(
+								context.TODO(),
+								bson.D{
+									{"query", cacheRes.Query},
+								},
+								bson.D{
+									{
+										"$inc", bson.D{
+											{"hits", 1},
+										},
+									},
+								},
+							)
+							if err != nil {
+								fmt.Println("Could not update: ", err)
+								continue
+							}
 							continue
 						}
 						response, err := getIPInfo(ip)
@@ -152,10 +236,12 @@ var ipCmd = &cobra.Command{
 							"Details of the IP:\n %+v \n",
 							response)
 
-						if !persist {
-							return
+						if !persist || response.Status == "fail" {
+							fmt.Println("Can't store to db")
+							continue
 						}
-						_, err = mongodb.MongoIPCollection.UpdateOne(
+
+						updateRes, err := mongodb.MongoIPCollection.UpdateOne(
 							context.TODO(),
 							bson.D{
 								{"query", response.Query},
@@ -170,9 +256,24 @@ var ipCmd = &cobra.Command{
 						)
 						if err != nil {
 							fmt.Println("Could not update: ", err)
-							return
+							continue
 						}
-						fmt.Println("Updated to mongo")
+
+						fmt.Println("Updated: ", updateRes.UpsertedCount)
+						if updateRes.UpsertedCount > 0 {
+							fmt.Println("Updated to mongo")
+							continue
+
+						}
+						response.Hits = 1
+						if _, err := mongodb.MongoIPCollection.InsertOne(
+							context.TODO(),
+							response,
+						); err != nil {
+							fmt.Println("Error in inserting to mongo: ", err)
+						} else {
+							fmt.Println("Inserted to mongo")
+						}
 
 					}
 				}
@@ -199,10 +300,11 @@ var ipCmd = &cobra.Command{
 		//} else {
 		//	fmt.Println("Insert ID: ", insertRes.InsertedID)
 		//}
-		if !persist {
+		if !persist || response.Status == "fail" {
 			return
 		}
-		_, err = mongodb.MongoIPCollection.UpdateOne(
+
+		updateRes, err := mongodb.MongoIPCollection.UpdateOne(
 			context.TODO(),
 			bson.D{
 				{"query", response.Query},
@@ -219,7 +321,22 @@ var ipCmd = &cobra.Command{
 			fmt.Println("Could not update: ", err)
 			return
 		}
-		fmt.Println("Updated to mongo")
+		fmt.Println("Updated: ", updateRes.UpsertedCount)
+		if updateRes.UpsertedCount > 0 {
+			fmt.Println("Updated to mongo")
+			return
+
+		}
+
+		response.Hits = 1
+		if _, err := mongodb.MongoIPCollection.InsertOne(
+			context.TODO(),
+			response,
+		); err != nil {
+			fmt.Println("Error in inserting to mongo: ", err)
+		} else {
+			fmt.Println("Inserted to mongo")
+		}
 
 	},
 }

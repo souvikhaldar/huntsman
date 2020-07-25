@@ -21,7 +21,10 @@ func SetEnv(configFilePath string) Config {
 	if err := json.Unmarshal(conf, &config); err != nil {
 		log.Fatal(err)
 	}
-	fmt.Println("Configuration found: ", config)
+	if len(config.MongoURI) == 0 {
+		log.Fatal("Configuration could not be read")
+	}
+	fmt.Println("Configuration found ")
 	return config
 	//	fmt.Println("Config: ", config)
 	//	if err := os.Setenv("mongo_username", config.MongoUsername); err != nil {
