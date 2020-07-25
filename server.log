@@ -1,0 +1,501 @@
+14:55:42.841786 IP 202.142.99.131.54434 > souvikhaldarinfo.http: Flags [P.], seq 2570206129:2570206663, ack 3781907072, win 2048, options [nop,nop,TS val 790048040 ecr 439057806], length 534: HTTP: GET /about/ HTTP/1.1
+E..J..@.4.....c..Y.....P.2;..kR.....:P.....
+/.-(.+}.GET /about/ HTTP/1.1
+Host: souvikhaldar.info
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Referer: http://souvikhaldar.info/
+Accept-Encoding: gzip, deflate
+Accept-Language: en-GB,en-US;q=0.9,en;q=0.8
+If-Modified-Since: Wed, 31 Jul 2019 12:44:43 GMT
+
+
+14:55:44.350914 IP 202.142.99.131.59840 > souvikhaldarinfo.http: Flags [P.], seq 203439876:203440369, ack 3731741537, win 2058, options [nop,nop,TS val 790049533 ecr 439056951], length 493: HTTP: GET /articles/ HTTP/1.1
+E..!..@.4.....c..Y.....P. ?..m.a...
+Dw.....
+/.2..+z7GET /articles/ HTTP/1.1
+Host: souvikhaldar.info
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Referer: http://souvikhaldar.info/about/
+Accept-Encoding: gzip, deflate
+Accept-Language: en-GB,en-US;q=0.9,en;q=0.8
+
+
+14:55:45.613248 IP 202.142.99.131.45661 > souvikhaldarinfo.http: Flags [P.], seq 3456476968:3456477466, ack 137734414, win 2058, options [nop,nop,TS val 790050518 ecr 439057942], length 498: HTTP: GET /networking/ HTTP/1.1
+E..&..@.4.....c..Y...].P...(.5.....
+Hz.....
+/.6..+~.GET /networking/ HTTP/1.1
+Host: souvikhaldar.info
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Referer: http://souvikhaldar.info/articles/
+Accept-Encoding: gzip, deflate
+Accept-Language: en-GB,en-US;q=0.9,en;q=0.8
+
+
+14:55:46.947382 IP 202.142.99.131.38866 > souvikhaldarinfo.http: Flags [P.], seq 3858252607:3858253105, ack 2314735691, win 2058, options [nop,nop,TS val 790052067 ecr 439090192], length 498: HTTP: GET /security/ HTTP/1.1
+E..&..@.4.....c..Y.....P..C?...K...
+.......
+/.<..+..GET /security/ HTTP/1.1
+Host: souvikhaldar.info
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Referer: http://souvikhaldar.info/networking/
+Accept-Encoding: gzip, deflate
+Accept-Language: en-GB,en-US;q=0.9,en;q=0.8
+
+
+14:55:48.441182 IP 202.142.99.131.38866 > souvikhaldarinfo.http: Flags [P.], seq 498:992, ack 4772, win 2048, options [nop,nop,TS val 790053524 ecr 439090299], length 494: HTTP: GET /events/ HTTP/1.1
+E.."..@.4.....c..Y.....P..E1.."......;.....
+/.B..+.{GET /events/ HTTP/1.1
+Host: souvikhaldar.info
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Referer: http://souvikhaldar.info/security/
+Accept-Encoding: gzip, deflate
+Accept-Language: en-GB,en-US;q=0.9,en;q=0.8
+
+
+14:55:48.588807 IP 202.142.99.131.63219 > souvikhaldarinfo.http: Flags [P.], seq 441155572:441156096, ack 1610299622, win 2058, options [nop,nop,TS val 790053667 ecr 439091822], length 524: HTTP: GET /livereload HTTP/1.1
+E..@..@.4.....c..Y.....P.K.._.8....
+.......
+/.C#.,.nGET /livereload HTTP/1.1
+Host: souvikhaldar.info
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36
+Upgrade: websocket
+Origin: http://souvikhaldar.info
+Sec-WebSocket-Version: 13
+Accept-Encoding: gzip, deflate
+Accept-Language: en-GB,en-US;q=0.9,en;q=0.8
+Sec-WebSocket-Key: ikRqCR144+91hHTSwceoEQ==
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+
+
+14:55:48.656194 IP 202.142.99.131.38866 > souvikhaldarinfo.http: Flags [P.], seq 498:992, ack 4772, win 2048, options [nop,nop,TS val 790053735 ecr 439090299], length 494: HTTP: GET /events/ HTTP/1.1
+E.."..@.4.....c..Y.....P..E1.."......h.....
+/.Cg.+.{GET /events/ HTTP/1.1
+Host: souvikhaldar.info
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Referer: http://souvikhaldar.info/security/
+Accept-Encoding: gzip, deflate
+Accept-Language: en-GB,en-US;q=0.9,en;q=0.8
+
+
+14:55:49.007106 IP 202.142.99.131.38866 > souvikhaldarinfo.http: Flags [P.], seq 498:992, ack 4772, win 2048, options [nop,nop,TS val 790054076 ecr 439090299], length 494: HTTP: GET /events/ HTTP/1.1
+E.."..@.4.....c..Y.....P..E1.."............
+/.D..+.{GET /events/ HTTP/1.1
+Host: souvikhaldar.info
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Referer: http://souvikhaldar.info/security/
+Accept-Encoding: gzip, deflate
+Accept-Language: en-GB,en-US;q=0.9,en;q=0.8
+
+
+14:55:49.500528 IP 202.142.99.131.38866 > souvikhaldarinfo.http: Flags [P.], seq 498:992, ack 4772, win 2048, options [nop,nop,TS val 790054558 ecr 439090299], length 494: HTTP: GET /events/ HTTP/1.1
+E.."..@.4.....c..Y.....P..E1.."......1.....
+/.F..+.{GET /events/ HTTP/1.1
+Host: souvikhaldar.info
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Referer: http://souvikhaldar.info/security/
+Accept-Encoding: gzip, deflate
+Accept-Language: en-GB,en-US;q=0.9,en;q=0.8
+
+
+14:55:50.275361 IP 202.142.99.131.38866 > souvikhaldarinfo.http: Flags [P.], seq 498:992, ack 4772, win 2048, options [nop,nop,TS val 790055323 ecr 439090299], length 494: HTTP: GET /events/ HTTP/1.1
+E.."..@.4.....c..Y.....P..E1.."......4.....
+/.I..+.{GET /events/ HTTP/1.1
+Host: souvikhaldar.info
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Referer: http://souvikhaldar.info/security/
+Accept-Encoding: gzip, deflate
+Accept-Language: en-GB,en-US;q=0.9,en;q=0.8
+
+
+14:55:51.607646 IP 202.142.99.131.38866 > souvikhaldarinfo.http: Flags [P.], seq 498:992, ack 4772, win 2048, options [nop,nop,TS val 790056651 ecr 439090299], length 494: HTTP: GET /events/ HTTP/1.1
+E.."..@.4.....c..Y.....P..E1.."............
+/.N..+.{GET /events/ HTTP/1.1
+Host: souvikhaldar.info
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Referer: http://souvikhaldar.info/security/
+Accept-Encoding: gzip, deflate
+Accept-Language: en-GB,en-US;q=0.9,en;q=0.8
+
+
+14:55:54.075395 IP 202.142.99.131.38866 > souvikhaldarinfo.http: Flags [P.], seq 498:992, ack 4772, win 2048, options [nop,nop,TS val 790059107 ecr 439090299], length 494: HTTP: GET /events/ HTTP/1.1
+E.."..@.4.....c..Y.....P..E1.."......l.....
+/.Xc.+.{GET /events/ HTTP/1.1
+Host: souvikhaldar.info
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Referer: http://souvikhaldar.info/security/
+Accept-Encoding: gzip, deflate
+Accept-Language: en-GB,en-US;q=0.9,en;q=0.8
+
+
+14:55:54.444465 IP 202.142.99.131.31572 > souvikhaldarinfo.http: Flags [P.], seq 280362660:280363154, ack 1255112362, win 2058, options [nop,nop,TS val 790059485 ecr 439095271], length 494: HTTP: GET /events/ HTTP/1.1
+E.."..@.4.....c..Y..{T.P....J.~....
+.7.....
+/.Y..,..GET /events/ HTTP/1.1
+Host: souvikhaldar.info
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Referer: http://souvikhaldar.info/security/
+Accept-Encoding: gzip, deflate
+Accept-Language: en-GB,en-US;q=0.9,en;q=0.8
+
+
+14:55:56.641600 IP 202.142.99.131.43265 > souvikhaldarinfo.http: Flags [P.], seq 629701565:629702089, ack 175193833, win 2058, options [nop,nop,TS val 790061667 ecr 439099874], length 524: HTTP: GET /livereload HTTP/1.1
+E..@..@.4.....c..Y.....P%.{.
+q>....
+.*.....
+/.bc.,!.GET /livereload HTTP/1.1
+Host: souvikhaldar.info
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36
+Upgrade: websocket
+Origin: http://souvikhaldar.info
+Sec-WebSocket-Version: 13
+Accept-Encoding: gzip, deflate
+Accept-Language: en-GB,en-US;q=0.9,en;q=0.8
+Sec-WebSocket-Key: sZqGi1JKKoiUPEqspW7lMg==
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+
+
+
+
+15:28:36.859319 IP souvikhaldarinfo.40292 > ip-api.com.http: Flags [P.], seq 254390653:254390763, ack 3305113741, win 29200, length 110: HTTP: GET /json/202.142.99.131 HTTP/1.1
+E...Z.@.@.^?.Y..._p..d.P.).}....P.r.....GET /json/202.142.99.131 HTTP/1.1
+Host: ip-api.com
+User-Agent: Go-http-client/1.1
+Accept-Encoding: gzip
+
+
+15:28:36.901072 IP souvikhaldarinfo.40292 > ip-api.com.http: Flags [P.], seq 110:220, ack 484, win 30016, length 110: HTTP: GET /json/202.142.99.131 HTTP/1.1
+E...Z.@.@.^=.Y..._p..d.P.)....
+pP.u@....GET /json/202.142.99.131 HTTP/1.1
+Host: ip-api.com
+User-Agent: Go-http-client/1.1
+Accept-Encoding: gzip
+
+
+15:28:36.942551 IP souvikhaldarinfo.40292 > ip-api.com.http: Flags [P.], seq 220:330, ack 967, win 31088, length 110: HTTP: GET /json/202.142.99.131 HTTP/1.1
+E...Z.@.@.^<.Y..._p..d.P.).Y...SP.yp....GET /json/202.142.99.131 HTTP/1.1
+Host: ip-api.com
+User-Agent: Go-http-client/1.1
+Accept-Encoding: gzip
+
+
+15:28:36.984288 IP souvikhaldarinfo.40292 > ip-api.com.http: Flags [P.], seq 330:440, ack 1450, win 32160, length 110: HTTP: GET /json/202.142.99.131 HTTP/1.1
+E...Z.@.@.^;.Y..._p..d.P.).....6P.}.....GET /json/202.142.99.131 HTTP/1.1
+Host: ip-api.com
+User-Agent: Go-http-client/1.1
+Accept-Encoding: gzip
+
+
+15:28:37.028037 IP souvikhaldarinfo.40292 > ip-api.com.http: Flags [P.], seq 440:550, ack 1933, win 33232, length 110: HTTP: GET /json/202.142.99.131 HTTP/1.1
+E...Z.@.@.^:.Y..._p..d.P.).5....P.......GET /json/202.142.99.131 HTTP/1.1
+Host: ip-api.com
+User-Agent: Go-http-client/1.1
+Accept-Encoding: gzip
+
+
+15:28:37.070298 IP souvikhaldarinfo.40292 > ip-api.com.http: Flags [P.], seq 550:660, ack 2416, win 34304, length 110: HTTP: GET /json/202.142.99.131 HTTP/1.1
+E...Z.@.@.^9.Y..._p..d.P.)......P.......GET /json/202.142.99.131 HTTP/1.1
+Host: ip-api.com
+User-Agent: Go-http-client/1.1
+Accept-Encoding: gzip
+
+
+15:28:37.111723 IP souvikhaldarinfo.40292 > ip-api.com.http: Flags [P.], seq 660:770, ack 2899, win 35376, length 110: HTTP: GET /json/202.142.99.131 HTTP/1.1
+E...Z.@.@.^8.Y..._p..d.P.)......P..0....GET /json/202.142.99.131 HTTP/1.1
+Host: ip-api.com
+User-Agent: Go-http-client/1.1
+Accept-Encoding: gzip
+
+
+15:28:37.153255 IP souvikhaldarinfo.40292 > ip-api.com.http: Flags [P.], seq 770:880, ack 3382, win 36448, length 110: HTTP: GET /json/202.142.99.131 HTTP/1.1
+E...Z.@.@.^7.Y..._p..d.P.)......P..`....GET /json/202.142.99.131 HTTP/1.1
+Host: ip-api.com
+User-Agent: Go-http-client/1.1
+Accept-Encoding: gzip
+
+
+15:28:37.194806 IP souvikhaldarinfo.40292 > ip-api.com.http: Flags [P.], seq 880:990, ack 3865, win 37520, length 110: HTTP: GET /json/202.142.99.131 HTTP/1.1
+E...Z.@.@.^6.Y..._p..d.P.)......P.......GET /json/202.142.99.131 HTTP/1.1
+Host: ip-api.com
+User-Agent: Go-http-client/1.1
+Accept-Encoding: gzip
+
+
+15:28:37.236277 IP souvikhaldarinfo.40292 > ip-api.com.http: Flags [P.], seq 990:1100, ack 4348, win 38592, length 110: HTTP: GET /json/202.142.99.131 HTTP/1.1
+E...Z.@.@.^5.Y..._p..d.P.).[....P.......GET /json/202.142.99.131 HTTP/1.1
+Host: ip-api.com
+User-Agent: Go-http-client/1.1
+Accept-Encoding: gzip
+
+
+15:28:37.277791 IP souvikhaldarinfo.40292 > ip-api.com.http: Flags [P.], seq 1100:1210, ack 4831, win 39664, length 110: HTTP: GET /json/202.142.99.131 HTTP/1.1
+E...Z.@.@.^4.Y..._p..d.P.).....kP.......GET /json/202.142.99.131 HTTP/1.1
+Host: ip-api.com
+User-Agent: Go-http-client/1.1
+Accept-Encoding: gzip
+
+
+15:28:37.319612 IP souvikhaldarinfo.40292 > ip-api.com.http: Flags [P.], seq 1210:1320, ack 5314, win 40736, length 110: HTTP: GET /json/202.142.99.131 HTTP/1.1
+E...Z.@.@.^3.Y..._p..d.P.).7...NP.. ....GET /json/202.142.99.131 HTTP/1.1
+Host: ip-api.com
+User-Agent: Go-http-client/1.1
+Accept-Encoding: gzip
+
+
+15:28:37.361512 IP souvikhaldarinfo.40292 > ip-api.com.http: Flags [P.], seq 1320:1430, ack 5797, win 41808, length 110: HTTP: GET /json/202.142.99.131 HTTP/1.1
+E...Z.@.@.^2.Y..._p..d.P.).....1P..P....GET /json/202.142.99.131 HTTP/1.1
+Host: ip-api.com
+User-Agent: Go-http-client/1.1
+Accept-Encoding: gzip
+
+
+15:28:37.403065 IP souvikhaldarinfo.40292 > ip-api.com.http: Flags [P.], seq 1430:1540, ack 6280, win 42880, length 110: HTTP: GET /json/202.142.99.131 HTTP/1.1
+E...Z.@.@.^1.Y..._p..d.P.)....!.P.......GET /json/202.142.99.131 HTTP/1.1
+Host: ip-api.com
+User-Agent: Go-http-client/1.1
+Accept-Encoding: gzip
+
+
+15:31:04.143527 IP 37.120.208.80.53837 > souvikhaldarinfo.http: Flags [P.], seq 3283609804:3283610298, ack 2485448181, win 2064, options [nop,nop,TS val 792152816 ecr 2546743484], length 494: HTTP: GET /articles/ HTTP/1.1
+E ."..@.4...%x.P.Y...M.P.....$.............
+/7J...8.GET /articles/ HTTP/1.1
+Host: souvikhaldar.info
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Referer: http://souvikhaldar.info/events/
+Accept-Encoding: gzip, deflate
+Accept-Language: en-GB,en-US;q=0.9,en;q=0.8
+
+
+15:31:04.326545 IP 37.120.208.80.53837 > souvikhaldarinfo.http: Flags [P.], seq 494:863, ack 7314, win 2048, options [nop,nop,TS val 792153014 ecr 2546743649], length 369: HTTP: GET /livereload.js?port=80&mindelay=10 HTTP/1.1
+E ....@.4..u%x.P.Y...M.P.....%
+............
+/7K...9aGET /livereload.js?port=80&mindelay=10 HTTP/1.1
+Host: souvikhaldar.info
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36
+Accept: */*
+Referer: http://souvikhaldar.info/articles/
+Accept-Encoding: gzip, deflate
+Accept-Language: en-GB,en-US;q=0.9,en;q=0.8
+
+
+15:31:10.551604 IP 37.120.208.80.53834 > souvikhaldarinfo.http: Flags [P.], seq 1323922288:1323922657, ack 1262267117, win 2064, options [nop,nop,TS val 792158951 ecr 2546744233], length 369: HTTP: GET /livereload.js?port=80&mindelay=10 HTTP/1.1
+E ....@.4..u%x.P.Y...J.PN.spK<......#......
+/7b...;.GET /livereload.js?port=80&mindelay=10 HTTP/1.1
+Host: souvikhaldar.info
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36
+Accept: */*
+Referer: http://souvikhaldar.info/articles/
+Accept-Encoding: gzip, deflate
+Accept-Language: en-GB,en-US;q=0.9,en;q=0.8
+
+
+15:31:11.028595 IP 37.120.208.80.53860 > souvikhaldarinfo.http: Flags [P.], seq 1592828187:1592828711, ack 2328374377, win 2064, options [nop,nop,TS val 792159424 ecr 2546750388], length 524: HTTP: GET /livereload HTTP/1.1
+E .@..@.4...%x.P.Y...d.P^.....,i....*A.....
+/7d...S.GET /livereload HTTP/1.1
+Host: souvikhaldar.info
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36
+Upgrade: websocket
+Origin: http://souvikhaldar.info
+Sec-WebSocket-Version: 13
+Accept-Encoding: gzip, deflate
+Accept-Language: en-GB,en-US;q=0.9,en;q=0.8
+Sec-WebSocket-Key: OviB68gPjjBqmtRdpMqnNQ==
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+
+
+15:31:12.215908 IP 37.120.208.80.53834 > souvikhaldarinfo.http: Flags [P.], seq 369:868, ack 22094, win 2048, options [nop,nop,TS val 792160581 ecr 2546750226], length 499: HTTP: GET /programming/ HTTP/1.1
+E .'..@.4...%x.P.Y...J.PN.t.K=.:...........
+/7iE..S.GET /programming/ HTTP/1.1
+Host: souvikhaldar.info
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Referer: http://souvikhaldar.info/articles/
+Accept-Encoding: gzip, deflate
+Accept-Language: en-GB,en-US;q=0.9,en;q=0.8
+
+
+15:31:13.120674 IP 37.120.208.80.53834 > souvikhaldarinfo.http: Flags [P.], seq 868:1240, ack 29826, win 2048, options [nop,nop,TS val 792161476 ecr 2546751896], length 372: HTTP: GET /livereload.js?port=80&mindelay=10 HTTP/1.1
+E ....@.4..r%x.P.Y...J.PN.v.K=.n.....}.....
+/7l...Y.GET /livereload.js?port=80&mindelay=10 HTTP/1.1
+Host: souvikhaldar.info
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36
+Accept: */*
+Referer: http://souvikhaldar.info/programming/
+Accept-Encoding: gzip, deflate
+Accept-Language: en-GB,en-US;q=0.9,en;q=0.8
+
+
+15:31:13.948270 IP 37.120.208.80.53866 > souvikhaldarinfo.http: Flags [P.], seq 3776235512:3776236036, ack 2038767921, win 2064, options [nop,nop,TS val 792162302 ecr 2546753309], length 524: HTTP: GET /livereload HTTP/1.1
+E .@..@.4...%x.P.Y...j.P....y.!1...........
+/7o..._.GET /livereload HTTP/1.1
+Host: souvikhaldar.info
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36
+Upgrade: websocket
+Origin: http://souvikhaldar.info
+Sec-WebSocket-Version: 13
+Accept-Encoding: gzip, deflate
+Accept-Language: en-GB,en-US;q=0.9,en;q=0.8
+Sec-WebSocket-Key: jiXI30LpLdy2xMIwYx0Vww==
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+
+
+15:31:42.239061 IP 37.120.208.80.53834 > souvikhaldarinfo.http: Flags [P.], seq 1240:1607, ack 51919, win 2048, options [nop,nop,TS val 792190384 ecr 2546753155], length 367: HTTP: GET /livereload.js?port=80&mindelay=10 HTTP/1.1
+E ....@.4..w%x.P.Y...J.PN.xHK=u............
+/7....^.GET /livereload.js?port=80&mindelay=10 HTTP/1.1
+Host: souvikhaldar.info
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36
+Accept: */*
+Referer: http://souvikhaldar.info/events/
+Accept-Encoding: gzip, deflate
+Accept-Language: en-GB,en-US;q=0.9,en;q=0.8
+
+
+15:31:44.548798 IP 37.120.208.80.53834 > souvikhaldarinfo.http: Flags [P.], seq 1607:2154, ack 74012, win 2048, options [nop,nop,TS val 792192674 ecr 2546783751], length 547: HTTP: GET /programming/ HTTP/1.1
+E .W..@.4...%x.P.Y...J.PN.y.K=......?......
+/7......GET /programming/ HTTP/1.1
+Host: souvikhaldar.info
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Referer: http://souvikhaldar.info/events/
+Accept-Encoding: gzip, deflate
+Accept-Language: en-GB,en-US;q=0.9,en;q=0.8
+If-Modified-Since: Sat, 25 Jul 2020 15:31:12 GMT
+
+
+15:31:44.549559 IP 37.120.208.80.53873 > souvikhaldarinfo.http: Flags [P.], seq 1382296456:1382296980, ack 3424698707, win 2064, options [nop,nop,TS val 792192675 ecr 2546783902], length 524: HTTP: GET /livereload HTTP/1.1
+E .@..@.4...%x.P.Y...q.PRd+.. .S...........
+/7......GET /livereload HTTP/1.1
+Host: souvikhaldar.info
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36
+Upgrade: websocket
+Origin: http://souvikhaldar.info
+Sec-WebSocket-Version: 13
+Accept-Encoding: gzip, deflate
+Accept-Language: en-GB,en-US;q=0.9,en;q=0.8
+Sec-WebSocket-Key: G/YMyUw1hM0ddXq0/J/ASw==
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+
+
+15:31:44.741495 IP 37.120.208.80.53834 > souvikhaldarinfo.http: Flags [P.], seq 2154:2526, ack 74124, win 2048, options [nop,nop,TS val 792192854 ecr 2546784054], length 372: HTTP: GET /livereload.js?port=80&mindelay=10 HTTP/1.1
+E ....@.4..r%x.P.Y...J.PN.{.K=.x....2<.....
+/7.V...6GET /livereload.js?port=80&mindelay=10 HTTP/1.1
+Host: souvikhaldar.info
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36
+Accept: */*
+Referer: http://souvikhaldar.info/programming/
+Accept-Encoding: gzip, deflate
+Accept-Language: en-GB,en-US;q=0.9,en;q=0.8
+
+
+15:31:46.839812 IP 37.120.208.80.53874 > souvikhaldarinfo.http: Flags [P.], seq 3808930691:3808931215, ack 2603812555, win 2064, options [nop,nop,TS val 792194945 ecr 2546786017], length 524: HTTP: GET /livereload HTTP/1.1
+E .@..@.4...%x.P.Y...r.P.....3......._.....
+/7......GET /livereload HTTP/1.1
+Host: souvikhaldar.info
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36
+Upgrade: websocket
+Origin: http://souvikhaldar.info
+Sec-WebSocket-Version: 13
+Accept-Encoding: gzip, deflate
+Accept-Language: en-GB,en-US;q=0.9,en;q=0.8
+Sec-WebSocket-Key: rCEXMeSuZMqBBF4kobx/yQ==
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+
+
+15:31:53.572470 IP 116.62.111.177.60027 > souvikhaldarinfo.http: Flags [P.], seq 3311354635:3311354928, ack 295887246, win 513, length 293: HTTP: GET /index.php HTTP/1.1
+E .M	.@.j...t>o..Y...{.P._C.....P.......GET /index.php HTTP/1.1
+Client-IP: 159.208.197.198
+X-Forwarded-For: 159.208.197.198
+Accept: text/html, application/xhtml+xml, */*
+Content-Type: text/html
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0
+Host: 159.89.161.156
+Connection: Keep-Alive
+
+
+15:31:53.907724 IP 116.62.111.177.60106 > souvikhaldarinfo.http: Flags [P.], seq 4054065895:4054066188, ack 248019935, win 513, length 293: HTTP: GET /index.php HTTP/1.1
+E .M..@.j...t>o..Y.....P.."...{.P.......GET /index.php HTTP/1.1
+Client-IP: 159.208.197.198
+X-Forwarded-For: 159.208.197.198
+Accept: text/html, application/xhtml+xml, */*
+Content-Type: text/html
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0
+Host: 159.89.161.156
+Connection: Keep-Alive
+
+
+15:31:54.149703 IP 116.62.111.177.60106 > souvikhaldarinfo.http: Flags [P.], seq 293:573, ack 177, win 512, length 280: HTTP: GET /phpmyadmin/index.php HTTP/1.1
+E .@.1@.j...t>o..Y.....P..$...|.P.......GET /phpmyadmin/index.php HTTP/1.1
+Client-IP: 159.208.197.198
+X-Forwarded-For: 159.208.197.198
+Accept: text/html, application/xhtml+xml, */*
+Content-Type: text/html
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0
+Host: 159.89.161.156
+
+
+

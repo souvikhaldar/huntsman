@@ -34,6 +34,7 @@ var KeyCmd = &cobra.Command{
 		fmt.Println("The address of websocket server: ", wsAddr)
 		fmt.Println("The port on which server is running: ", listenerPort)
 		router := mux.NewRouter()
+		initilizeJS()
 		router.HandleFunc("/js", serveJS)
 		router.HandleFunc("/ws", wsServer)
 		router.HandleFunc("/hello", func(w http.ResponseWriter,
@@ -50,16 +51,18 @@ var KeyCmd = &cobra.Command{
 	},
 }
 
+func initilizeJS() {
+	jsTemplate, err = template.ParseFiles("static/logger.js")
+	if err != nil {
+		log.Fatal(err)
+	}
+}
 func init() {
 	rootCmd.AddCommand(KeyCmd)
 	KeyCmd.Flags().StringVarP(&wsAddr, "ws-addr", "w", "localhost:8192", "address of the websocket server")
 	KeyCmd.Flags().StringVarP(&listenerPort, "listener-port", "l", "8192", `
 	The port at which the listener server should run on this machine
 	`)
-	jsTemplate, err = template.ParseFiles("static/logger.js")
-	if err != nil {
-		log.Fatal(err)
-	}
 }
 
 func wsServer(w http.ResponseWriter, r *http.Request) {
