@@ -97,29 +97,30 @@ Example:
 `huntsman portScan --target abc.com`  
 
 # Location details of IP or tcpdump  
+```
+huntsman ipinfo --help                                                                                              ✔  5244  03:05:00
+Fetch the location information of the IP
 
-`huntsman ipinfo --ip=12.121.212.32`  
+Usage:
+  huntsman ipinfo [flags]
 
-[![asciicast](https://asciinema.org/a/342086.svg)](https://asciinema.org/a/342086)
+Flags:
+  -c, --config string     The path to the configuration JSON file
+  -h, --help              help for ipinfo
+      --ip string         IP address of the target
+  -p, --persist           Do you want to store the response to mongo? If yes, please provide value to --config flag
+  -s, --read-stream       Do you want to read from tcpdump output contineously?
+  -t, --tcp-dump string   source file of tcpdump
+```
 
-  	Providing tcpdump log:   
+There are three ways you can lookup location details of IP.
+1. Lookup single IP or domain name. Eg. `huntsman ipinfo --ip netflix.com`  
+2. Parse `tcpdump` log. Eg. `huntsman ipinfo --tcp-dump server.log`  
+3. See the location details of incoming traffic in real tim. `huntsman ipinfo -s`   
+If you want to store it to db, you can provide details in `config.json` at root dir, then use `huntsman ipinfo -s -p -c config.json`  
+[Youtube link for the video demonstration](https://youtu.be/rdE3cGBT_wA)
 
-        Parsing location info from log file of `tcpdump`
 
-
-       ```
-       huntsman iploc --tcp-dump server.log
-       Request came from:  fwdproxy-frc-003.fbsv.net
-       Details of the requester:  {"status":"success","country":"United States","countryCode":"US","region":"NJ","regionName":"New Jersey","city":"Newark","zip":"07175","lat":40.7357,"lon":-74.1724,"timezone":"America/New_York","isp":"Facebook, Inc.","org":"Facebook, Inc.","as":"AS32934 Facebook, Inc.","query":"173.252.127.3"}. 
-       ```
-  
-
-       P.S- The log file was populated by:  
-       ```
-       tcpdump -s 0 -A 'tcp[((tcp[12:1] & 0xf0) >> 2):4] = 0x47455420' > server.log
-       ```
-        
-        The above command was run on the server where HTTP service was running on port 80.
 
 # Run a TCP proxy
 
