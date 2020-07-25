@@ -120,7 +120,7 @@ There are three ways you can lookup location details of IP.
 If you want to store it to db, you can provide details in `config.json` at root dir, then use `huntsman ipinfo -s -p -c config.json`  
 [Youtube link for the video demonstration](https://youtu.be/rdE3cGBT_wA)
 
-
+![](2020-07-26-03-18-25.png)
 
 # Run a TCP proxy
 
