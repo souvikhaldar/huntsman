@@ -15,13 +15,27 @@ https://souvikhaldar.github.io/huntsman/
 
 
 
+# Inspiration
+The inspiration of this tool are primarily the following two sources:
+1. Pursuing [Advanced Exercutive Program in Cyber Security and Cyber Defense](https://talentsprint.com/pages/wip/iit-kanpur/v2.5/index.html) at the esteemed [c3i](https://security.cse.iitk.ac.in/) institution of [IIT Kanpur](https://www.iitk.ac.in/) and Professor [Sandeep Shukla](https://www.cse.iitk.ac.in/users/sandeeps/), [Rohit Negi](https://www.linkedin.com/in/rohit-negi-02856227/) and [Anand Handa](https://www.linkedin.com/in/anand-handa-391a61107/), who helped take baby steps in cyber security world.  
+2. The excellent book [Black Hat Go: Go Programming For Hackers and Pentesters](https://www.amazon.in/Black-Hat-Go-Programming-Pentesters-ebook/dp/B073NPY29N) by Tom Steele, Chris Patten and Dan Kottmann. 
+
+
+# What steps huntsman apart?
+* Fast and concurrent
+* Single binary executable for almost every platform and architecture
+* Consumes very less RAM (about 10-15 MB) and CPU  
+* Each step well documented and covered in video tutorial as well 
+
+
 # Path
 - [x] Port scanner    
 - [x] IP information  
+- [x] HTTP traffic analyzer
 - [x] TCP proxy    
 - [x] TCP listener  
 - [x] HTTP server  
-- [x] Reverse Shell listener  
+- [x] Reverse Shell
 - [x] Keylogger  
 - [ ] SMB and NTLM expotation  
 - [ ] Abusing Databases  
@@ -32,23 +46,21 @@ https://souvikhaldar.github.io/huntsman/
 - [ ] steganography  
 - [ ] CNC RAT  
 
-# Inspiration
-The inspiration of this tool are primarily the following two sources:
-1. Pursuing [Advanced Exercutive Program in Cyber Security and Cyber Defense](https://talentsprint.com/pages/wip/iit-kanpur/v2.5/index.html) at the esteemed [c3i](https://security.cse.iitk.ac.in/) institution of [IIT Kanpur](https://www.iitk.ac.in/) and Professor [Sandeep Shukla](https://www.cse.iitk.ac.in/users/sandeeps/), [Rohit Negi](https://www.linkedin.com/in/rohit-negi-02856227/) and [Anand Handa](https://www.linkedin.com/in/anand-handa-391a61107/), who helped take baby steps in cyber security world.  
-2. The excellent book [Black Hat Go: Go Programming For Hackers and Pentesters](https://www.amazon.in/Black-Hat-Go-Programming-Pentesters-ebook/dp/B073NPY29N) by Tom Steele, Chris Patten and Dan Kottmann. 
 
 
 # Complete Guide
 		
+
 # Installation
 There multiple ways in which you can install `huntsman` on your machine or a target machine.  
+
 1. Install it using golang compiler using `go install` or `go build`
 	
 	1. [Install Golang](https://golang.org/doc/install)    
 	2. `git clone git@github.com:souvikhaldar/huntsman.git`
 	3. `cd huntsman`  
 	4. `go install`  
-2. Download and copy the binary from `/download` directory on $PATH.  
+2. Download the binary from RELEASES and save it on on `$PATH`.  
 3. Use the `goinstaller.py` script.  
 	```
 	./goinstaller.py --help 
@@ -68,6 +80,7 @@ There multiple ways in which you can install `huntsman` on your machine or a tar
 	  --source SOURCE       The directory where source source is present
 	  --target TARGET       The target dir where the binary needs to be stored
 	```
+
 	Eg. Compiling for **popular** OSes like Windows, Microsoft and Linux for 64-bit architecture can be done using
 	`./goinstaller.py --target ./download --os popular --arch amd64`
 
