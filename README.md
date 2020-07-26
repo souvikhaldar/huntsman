@@ -21,7 +21,7 @@ The inspiration of this tool are primarily the following two sources:
 2. The excellent book [Black Hat Go: Go Programming For Hackers and Pentesters](https://www.amazon.in/Black-Hat-Go-Programming-Pentesters-ebook/dp/B073NPY29N) by Tom Steele, Chris Patten and Dan Kottmann. 
 
 
-# What steps huntsman apart?
+# What sets huntsman apart?
 * Fast and concurrent
 * Single binary executable for almost every platform and architecture
 * Consumes very less RAM (about 10-15 MB) and CPU  
@@ -108,15 +108,15 @@ the root and provide the following information:
 
 # Fast concurrent port scanning  
 ``` 
-huntsman portScan --help
+huntsman portscan --help                                                                                              ✔  5260  10:02:36
 Concurrently scan the provided range (by default 0 to 65535) to check if any port is open
 
 Usage:
-  huntsman portScan [flags]
+  huntsman portscan [flags]
 
 Flags:
   -e, --end int32       last port number (default 65535)
-  -h, --help            help for portScan
+  -h, --help            help for portscan
   -s, --start int32     starting port number (default 1)
       --target string   IP/URL address of the machine to be scanned
   -t, --threads int32   the number of goroutines to execute at a time (default 100)
