@@ -108,7 +108,7 @@ the root and provide the following information:
 
 # Fast concurrent port scanning  
 ``` 
-huntsman portscan --help                                                                                              ✔  5260  10:02:36
+huntsman portscan --help                                                                                    SIGINT(2) ↵  5295  10:30:46
 Concurrently scan the provided range (by default 0 to 65535) to check if any port is open
 
 Usage:
@@ -120,6 +120,7 @@ Flags:
   -s, --start int32     starting port number (default 1)
       --target string   IP/URL address of the machine to be scanned
   -t, --threads int32   the number of goroutines to execute at a time (default 100)
+
 ```
 
 Example:  
