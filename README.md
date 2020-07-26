@@ -23,8 +23,6 @@ https://souvikhaldar.github.io/huntsman/
 - [x] HTTP server  
 - [x] Reverse Shell listener  
 - [x] Keylogger  
-- [ ] Exploiting DNS  
-- [ ] VirusTotal API functionality  
 - [ ] SMB and NTLM expotation  
 - [ ] Abusing Databases  
 - [ ] Packet processing  
@@ -36,7 +34,7 @@ https://souvikhaldar.github.io/huntsman/
 
 # Inspiration
 The inspiration of this tool are primarily the following two sources:
-1. Pursuing [Advanced Exercutive Program in Cyber Security and Cyber Defense](https://talentsprint.com/pages/wip/iit-kanpur/v2.5/index.html) at the esteemed [c3i](https://security.cse.iitk.ac.in/) institution of [IIT Kanpur](https://www.iitk.ac.in/) and Professor [Sandeep Shukla](https://www.cse.iitk.ac.in/users/sandeeps/).  
+1. Pursuing [Advanced Exercutive Program in Cyber Security and Cyber Defense](https://talentsprint.com/pages/wip/iit-kanpur/v2.5/index.html) at the esteemed [c3i](https://security.cse.iitk.ac.in/) institution of [IIT Kanpur](https://www.iitk.ac.in/) and Professor [Sandeep Shukla](https://www.cse.iitk.ac.in/users/sandeeps/), [Rohit Negi](https://www.linkedin.com/in/rohit-negi-02856227/) and [Anand Handa](https://www.linkedin.com/in/anand-handa-391a61107/), who helped take baby steps in cyber security world.  
 2. The excellent book [Black Hat Go: Go Programming For Hackers and Pentesters](https://www.amazon.in/Black-Hat-Go-Programming-Pentesters-ebook/dp/B073NPY29N) by Tom Steele, Chris Patten and Dan Kottmann. 
 
 
