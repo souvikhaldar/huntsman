@@ -26,7 +26,7 @@ The inspiration of this tool are primarily the following two sources:
 * Single binary executable for almost every platform and architecture
 * Consumes very less RAM (about 10-15 MB) and CPU  
 * Each step well documented and covered in video tutorial as well 
-
+* The binary compiled it Golang is very hard to reverse engineer, hence it is
 
 # Path
 - [x] Port scanner    
