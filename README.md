@@ -1,5 +1,5 @@
 # Huntsman
-A swiss army knife for all things security.
+A versatile and highly concurrent malware written in Golang.  
 https://souvikhaldar.github.io/huntsman/
 
 ![](huntsman-main.jpg)
