@@ -8,10 +8,9 @@ https://souvikhaldar.github.io/huntsman/
 [1.Installation](https://github.com/souvikhaldar/huntsman#installation)   
 [2.Reverse shell](https://github.com/souvikhaldar/huntsman#reverse-shell)  
 [3.Concurrent port scanning](https://github.com/souvikhaldar/huntsman#fast-concurrent-port-scanning)    
-[4.IP location details](https://github.com/souvikhaldar/huntsman#location-details-of-ip-or-tcpdump)  
-[5.TCP proxy](https://github.com/souvikhaldar/huntsman#run-a-tcp-proxy)   
-[6.TCP Listener](https://github.com/souvikhaldar/huntsman#run-a-tcp-listener)   
-[7.Keylogger](https://github.com/souvikhaldar/huntsman/blob/master/README.md#keylogger)
+[4.TCP proxy](https://github.com/souvikhaldar/huntsman#run-a-tcp-proxy)   
+[5.TCP Listener](https://github.com/souvikhaldar/huntsman#run-a-tcp-listener)   
+[6.Keylogger](https://github.com/souvikhaldar/huntsman/blob/master/README.md#keylogger)
 
 
 
@@ -30,7 +29,6 @@ The inspiration of this tool are primarily the following two sources:
 
 # Path
 - [x] Port scanner    
-- [x] IP information  
 - [x] HTTP traffic analyzer
 - [x] TCP proxy    
 - [x] TCP listener  
