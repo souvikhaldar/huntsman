@@ -90,21 +90,6 @@ using `scp` or any tool of choice:
 Eg, transfering linux binary to target machine:  
 `scp ./download/linux_amd64 username@address:location`
 
-# Setup
-Some tools allow you to store the information on the database, like IP location tracing.  
-If you want the same, you have to set the configuration for the same in `config.json` at
-the root and provide the following information:   
-
-```
-{
-  "mongo_uri": "uri of the mongo atlas",
-  "mongo_username":"usename",
-  "mongo_password":"password",
-  "mongo_database":"database name",
-  "mongo_collection":"collection name",
-  "js_file_path":"path to js file for serving reverse shell"
-}
-```
 
 # Fast concurrent port scanning  
 ``` 
