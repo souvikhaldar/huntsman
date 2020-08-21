@@ -4,6 +4,22 @@ https://souvikhaldar.github.io/huntsman/
 
 ![](huntsman-main.jpg)
 
+# Abstract
+The term Malware is an acronym for Malicious Software, which is software that is used to harm or exploit any electronic device or network, causing chaos. 
+Programming is the way of writing down thoughts and logic, in a way the computers can understand, and while writing a program there is always a scope of introducing errors and flaws or missing out on potentially dangerous scenarios. These flaws in the program are what hackers call vulnerability, and they exploit these bugs to make it behave in a way the programmer never intended. Malware is the way hackers talk to the computer to satisfy this goal. Hence, writing malware is an art to exploit the error in thinking. 
+Huntsman is a malware, which was created keeping speed and efficiency in mind because at the end of the day malware is also a software, a malicious one.
+Huntsman in written in a language called golang and below are the highlights of what makes it a special kind of malware:  
+* Fast and concurrent: Our CPUs are not getting any faster as Moore’s law is dead, hence the way we can improve on processing is by reducing the latency introduced by I/O operations by adding more and more cache memory and using multiple CPUs instead of one. But, both these factors have a limit as to how large the cache can be and how many cores can be added. Hence software can be made faster by concurrently running pieces of a process (called thread). Golang takes care of this aspect well and hence Huntsman can be said to be an efficient concurrent software.  
+
+* Single executable binary: Once you find a vulnerability in a system and want to exploit it using a malware, you need to reduce the time required to place the binary at the intended place. Hence having a single binary can that execute on the system is very useful as you can there is nothing else to take care of. You just place it there and start exploiting, no dependencies involved!
+
+* Cross-platform: The target system can be of any architecture and be running any operating system, hence is it important that the malware should be capable enough to run on most of them. Hence the true cross-platform nature of golang comes into the picture as Huntsman can be compiled into almost any platform of choice and it will be ready to execute in no time.
+
+* Versatile: Huntsman is not just one kind of malware, it is a versatile malware that can perform many kinds of malicious activity. The goal behind making huntsman versatile was that once we get access to a system, we should be able to exploit it to maximum extent and maximum possible ways. For a complete set of features refer to the feature section.
+
+* Static analysis proof: A program written in golang is very hard to reverse engineer, and hence it is safe from static malware analysis to a large extent. Hence huntsman is hard to get caught very easily.  
+
+
 # Complete guide
 [1.Installation](https://github.com/souvikhaldar/huntsman#installation)   
 [2.Reverse shell](https://github.com/souvikhaldar/huntsman#reverse-shell)  
@@ -20,12 +36,6 @@ The inspiration of this tool are primarily the following two sources:
 2. The excellent book [Black Hat Go: Go Programming For Hackers and Pentesters](https://www.amazon.in/Black-Hat-Go-Programming-Pentesters-ebook/dp/B073NPY29N) by Tom Steele, Chris Patten and Dan Kottmann. 
 
 
-# What sets huntsman apart?
-* Fast and concurrent
-* Single binary executable for almost every platform and architecture
-* Consumes very less RAM (about 10-15 MB) and CPU  
-* Each step well documented and covered in video tutorial as well 
-* The binary compiled it Golang is very hard to reverse engineer, hence it is
 
 # Path
 - [x] Port scanner    
