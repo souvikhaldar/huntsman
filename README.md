@@ -91,6 +91,9 @@ There multiple ways in which you can install `huntsman` on your machine or a tar
 
 	Eg. Compiling for **popular** OSes like Windows, Microsoft and Linux for 64-bit architecture can be done using
 	`./goinstaller.py --target ./download --os popular --arch amd64`
+## Using docker
+You can run `huntsman` in docker as well.  
+`docker pull souvikhaldar/huntsman`
 
 # Transfer to a target
 Once you've compiled huntsman for the target OS and arch, you can transfer it 
