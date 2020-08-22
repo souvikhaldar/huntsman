@@ -1,5 +1,6 @@
 # Huntsman
 A versatile and highly concurrent malware written in Golang.  
+[![PkgGoDev](https://pkg.go.dev/badge/souvikhaldar/huntsman)](https://pkg.go.dev/souvikhaldar/huntsman)  
 https://souvikhaldar.github.io/huntsman/
 
 ![](huntsman-main.jpg)
