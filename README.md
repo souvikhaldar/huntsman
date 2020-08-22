@@ -93,7 +93,7 @@ There multiple ways in which you can install `huntsman` on your machine or a tar
 	`./goinstaller.py --target ./download --os popular --arch amd64`
 ## Using docker
 You can run `huntsman` in docker as well.  
-`docker pull souvikhaldar/huntsman`
+`docker pull souvikhaldar/huntsman:0.6`
 
 # Transfer to a target
 Once you've compiled huntsman for the target OS and arch, you can transfer it 
