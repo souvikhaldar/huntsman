@@ -3,7 +3,7 @@ A versatile and highly concurrent malware written in Golang.
 https://souvikhaldar.github.io/huntsman/
 
 ![](huntsman-main.jpg)
-
+*NOTE* - This software is built for educational purpose. I'm not responsible for any kind of loss/inconvienience caused to anyone using this software.
 # Abstract
 The term Malware is an acronym for Malicious Software, which is software that is used to harm or exploit any electronic device or network, causing chaos. 
 Programming is the way of writing down thoughts and logic, in a way the computers can understand, and while writing a program there is always a scope of introducing errors and flaws or missing out on potentially dangerous scenarios. These flaws in the program are what hackers call vulnerability, and they exploit these bugs to make it behave in a way the programmer never intended. Malware is the way hackers talk to the computer to satisfy this goal. Hence, writing malware is an art to exploit the error in thinking. 
