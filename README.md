@@ -22,7 +22,7 @@ Huntsman in written in a language called golang and below are the highlights of 
 
 # Complete guide
 [1.Installation](https://github.com/souvikhaldar/huntsman#installation)   
-[2.Reverse shell](https://github.com/souvikhaldar/huntsman#bind-shell)  
+[2.Bind Shell](https://github.com/souvikhaldar/huntsman#bind-shell)  
 [3.Concurrent port scanning](https://github.com/souvikhaldar/huntsman#fast-concurrent-port-scanning)    
 [4.TCP proxy](https://github.com/souvikhaldar/huntsman#run-a-tcp-proxy)   
 [5.TCP Listener](https://github.com/souvikhaldar/huntsman#run-a-tcp-listener)   
@@ -51,7 +51,7 @@ The inspiration of this tool are primarily the following two sources:
 - [ ] Fuzzing and shellcode  
 - [ ] Cryptography  
 - [ ] Windows system analysis  
-- [ ] steganography  
+- [ ] Steganography  
 - [ ] CNC RAT  
 
 
@@ -141,7 +141,7 @@ running to which you will be sending instructions to execute.
 
 We will be using [netcat](http://netcat.sourceforge.net/) as the client for 
 sending the commands over the network.  
-`nc <address-of-target> <port-number>`  
+`nc -nv <address-of-target> <port-number>`  
 [Youtube link for the video demonstration](https://youtu.be/eE0k0GVZXyc)
 
 # Keylogger 
@@ -150,6 +150,3 @@ Huntsman is the tool that contains a keylogger as well.
 Eg. `huntsman keylogger -w localhost:8192 -l 8192`   
 
 This video is the demonstration for using huntsman as a keylogger. [Link to youtube video](https://youtu.be/BoPICq1MVhA)
-
-
-
