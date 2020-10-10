@@ -22,7 +22,7 @@ Huntsman in written in a language called golang and below are the highlights of 
 
 # Complete guide
 [1.Installation](https://github.com/souvikhaldar/huntsman#installation)   
-[2.Reverse shell](https://github.com/souvikhaldar/huntsman#reverse-shell)  
+[2.Reverse shell](https://github.com/souvikhaldar/huntsman#bind-shell)  
 [3.Concurrent port scanning](https://github.com/souvikhaldar/huntsman#fast-concurrent-port-scanning)    
 [4.TCP proxy](https://github.com/souvikhaldar/huntsman#run-a-tcp-proxy)   
 [5.TCP Listener](https://github.com/souvikhaldar/huntsman#run-a-tcp-listener)   
@@ -132,11 +132,11 @@ Example:
 `huntsman listen --port=<port>`
 
 
-# Reverse shell
+# Bind Shell
 First you need to compile the binary for the target machine using the 
 `goinstaller.py` or anything of choice. Then preferably use `scp` to transfer
 the binary to the target machine (see `Installation` section) then execute it
-using `./<binary-name> reverseshell --port <port-number>`. Now the listener is
+using `./<binary-name> bindshell --port <port-number>`. Now the listener is
 running to which you will be sending instructions to execute.   
 
 We will be using [netcat](http://netcat.sourceforge.net/) as the client for 
