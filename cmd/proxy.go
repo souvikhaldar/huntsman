@@ -34,13 +34,13 @@ var proxyCmd = &cobra.Command{
 				fmt.Println("Unable to listen to requests: ", err)
 				return
 			}
-			go Proxy(src)
+			go proxy(src)
 		}
 
 	},
 }
 
-func Proxy(src net.Conn) {
+func proxy(src net.Conn) {
 
 	dest := destAdd + ":" + port
 	dst, err := net.Dial("tcp", dest)
