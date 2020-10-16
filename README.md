@@ -97,7 +97,7 @@ You can run `huntsman` in docker as well.
 
 # Transfer to a target
 Once you've compiled huntsman for the target OS and arch, you can transfer it 
-using `scp` or any tool of choice:  
+using `scp` or any tool of choice, for exploiting the victim.  
 Eg, transfering linux binary to target machine:  
 `scp ./download/linux_amd64 username@address:location`
 
