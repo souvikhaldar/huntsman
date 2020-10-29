@@ -33,7 +33,7 @@ var scanCmd = &cobra.Command{
 		numOfPorts := end - start
 		num := int32(0)
 		for open := range openCount {
-			num += 1
+			num++
 			if open != 0 {
 				fmt.Println("Open port: ", open)
 			}
