@@ -24,12 +24,14 @@ Huntsman in written in a language called Golang.
 
 
 # Complete guide
+
 [1.Installation](#installation)   
 [2.Reverse shell](#reverse-shell)  
 [3.Concurrent port scanning](#fast-concurrent-port-scanning)    
 [4.TCP proxy](#run-a-tcp-proxy)   
 [5.TCP Listener](#run-a-tcp-listener)   
 [6.Keylogger](#keylogger)
+
 
 
 
@@ -54,7 +56,7 @@ The inspiration of this tool are primarily the following two sources:
 - [ ] Fuzzing and shellcode  
 - [ ] Cryptography  
 - [ ] Windows system analysis  
-- [ ] steganography  
+- [ ] Steganography  
 - [ ] CNC RAT  
 
 
@@ -98,12 +100,11 @@ There multiple ways in which you can install `huntsman` on your machine or a tar
 You can run `huntsman` in docker as well.  
 `docker pull souvikhaldar/huntsman:0.6`
 
+
 ### Transfer to a target
 Once you've compiled Huntsman for the target OS and arch, you can transfer it 
-using `scp` or any tool of choice:  
-Eg, transfering linux binary to target machine:  
+using `scp` or any tool of choice. Eg, transfering linux binary to target machine:  
 `scp ./download/linux_amd64 username@address:location`
-
 # Features
 
 ## Fast concurrent port scanning  
@@ -135,14 +136,18 @@ Example:
 
 `huntsman listen --port=<port>`
 
+# Bind Shell
+First you need to compile the binary for the target machine using the 
+`goinstaller.py` or anything of choice. Then preferably use `scp` to transfer
+the binary to the target machine (see `Installation` section) then execute it
+using `./<binary-name> bindshell --port <port-number>`. Now the listener is
+running to which you will be sending instructions to execute.   
 
-## Reverse shell
-First, compile the binary for the target machine and transfer it using the methods described in [installation](#installation). Then, execute it using 
-`./<binary-name> reverseshell --port <port-number>` 
-Now the listener is running to which you will be sending instructions to execute.   
+We will be using [netcat](http://netcat.sourceforge.net/) as the client for 
+sending the commands over the network.  
+`nc -nv <address-of-target> <port-number>`  
+[Youtube link for the video demonstration](https://youtu.be/eE0k0GVZXyc)
 
-We will be using [netcat](http://netcat.sourceforge.net/) as the client for sending the commands over the network.  
-`nc <address-of-target> <port-number>`  
 [Youtube link for the video demonstration](https://youtu.be/eE0k0GVZXyc)
 
 ## Keylogger 
@@ -151,6 +156,3 @@ A keylogger can log the keystrokes made by a user, typically on a web server. Th
 Ex. `huntsman keylogger -w localhost:8192 -l 8192`   
 
 This video is the demonstration for using huntsman as a keylogger. [Link to youtube video](https://youtu.be/BoPICq1MVhA)
-
-
-

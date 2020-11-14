@@ -8,6 +8,7 @@ import (
 	"os"
 )
 
+// SetEnv opens and reads a configuration file
 func SetEnv(configFilePath string) Config {
 	file, err := os.Open(configFilePath)
 	if err != nil {

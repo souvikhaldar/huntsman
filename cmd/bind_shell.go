@@ -66,6 +66,6 @@ func handle(conn net.Conn) {
 func init() {
 	rootCmd.AddCommand(rsCmd)
 	rsCmd.Flags().StringVar(&rsPort, "port", "13337", `
-	The port on which this bind shell listen for coommands
+	The port on which this bind shell listen for commands
 	`)
 }

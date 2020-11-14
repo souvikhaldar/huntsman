@@ -17,6 +17,7 @@ var rootCmd = &cobra.Command{
 	},
 }
 
+// Execute is a wrapper around Cobra's rootCmd.Execute() to enable error handling.
 func Execute() {
 	if err := rootCmd.Execute(); err != nil {
 		fmt.Println(err)
