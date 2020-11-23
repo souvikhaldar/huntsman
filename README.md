@@ -1,3 +1,4 @@
+[![Go Report Card](https://goreportcard.com/badge/github.com/souvikhaldar/huntsman)](https://goreportcard.com/report/github.com/souvikhaldar/huntsman)
 # Huntsman
 A versatile and highly concurrent malware written in Golang.  
 https://souvikhaldar.github.io/huntsman/
