@@ -2,4 +2,4 @@ sample-install-script.sh
 *.swp
 *.out
 config.json
-
+.DS_Store
