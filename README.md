@@ -69,32 +69,10 @@ There multiple ways in which you can install `huntsman` on your machine or a tar
 	2. `git clone git@github.com:souvikhaldar/huntsman.git`
 	3. `cd huntsman`  
 	4. `go install`  
-2. Download the binary from RELEASES and save it on on `$PATH`.  
-3. Use the `goinstaller.py` script.  
-	```
-	./goinstaller.py --help 
-	Install go program for multiple OS and multiple architectures
-	Run goinstaller.py --help for all options
-	usage: goinstaller.py [-h]
-			      [--os {all,popular,linux,darwin,windows,dragonfly,android,freebsd,netbsd,openbsd,plan9,solaris,aixjs}]
-			      [--arch {all,popular,amd64,386,arm,ppc64,arm64,ppc64le,mips,mipsle,mips64,mips64le,s390x}]
-			      [--source SOURCE] [--target TARGET]
-
-	optional arguments:
-	  -h, --help            show this help message and exit
-	  --os {all,popular,linux,darwin,windows,dragonfly,android,freebsd,netbsd,openbsd,plan9,solaris,aixjs}
-				The target OS. Eg. all,linux,darwin,windows,etc
-	  --arch {all,popular,amd64,386,arm,ppc64,arm64,ppc64le,mips,mipsle,mips64,mips64le,s390x}
-				The target's architecture. Eg. all,amd64,386,etc
-	  --source SOURCE       The directory where source source is present
-	  --target TARGET       The target dir where the binary needs to be stored
-	```
-
-	Eg. Compiling for **popular** OSes like Windows, Microsoft and Linux for 64-bit architecture can be done using
-	`./goinstaller.py --target ./download --os popular --arch amd64`
-## Using docker
-You can run `huntsman` in docker as well.  
-`docker pull souvikhaldar/huntsman:0.6`
+2. Download the binary for you system from [RELEASES](https://github.com/souvikhaldar/huntsman/releases) and save it on on `$PATH`.  
+	1. Downloading using `wget`: `wget <huntsman_xyz.tar.gz`
+	2. Untar it using `tar -xf <huntsman_xyz.tar.gz`
+	3. Place the `huntsman` binary executable somewhere on $PATH, eg `sudo mv huntsman /usr/local/bin`
 
 # Transfer to a target
 Once you've compiled huntsman for the target OS and arch, you can transfer it 
