@@ -3,3 +3,4 @@ sample-install-script.sh
 *.out
 config.json
 .DS_Store
+dist/
