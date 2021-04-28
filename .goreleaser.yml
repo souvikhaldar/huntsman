@@ -6,6 +6,9 @@ before:
     - go mod tidy
     # you may remove this if you don't need go generate
     - go generate ./...
+dockers:
+  - image_templates:
+    - souvikhaldar/huntsman
 builds:
   - env:
       - CGO_ENABLED=0
