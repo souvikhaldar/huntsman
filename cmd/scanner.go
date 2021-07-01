@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"net"
 	"strconv"
-	"sync"
+	"time"
 
 	"github.com/spf13/cobra"
 )
@@ -19,44 +19,45 @@ var scanCmd = &cobra.Command{
 	Long:  "Concurrently scan the provided range (by default 0 to 65535) to check if any port is open",
 	Run: func(cmd *cobra.Command, args []string) {
 		threadPool := make(chan int, threads)
-		openCount := make(chan int)
-		var wg sync.WaitGroup
-		go func(threadPool chan int, openCount chan int) {
-			for i := start; i <= end; i++ {
+		openCount := make(chan int, end-1)
+
+		go func(threadPool, openCount chan int) {
+			for i := start; i < end; i++ {
 				threadPool <- 1
-				wg.Add(1)
-				go func(target string, threadCount chan int, port int32) {
-					isOpen(target, openCount, port)
+				go func(target string, openCount chan int, port int32) {
+					defer func() {
+						<-threadPool
+						if i == end-1 {
+							time.Sleep(1 * time.Second)
+							close(openCount)
+						}
+					}()
+
+					if isOpen(target, port) {
+						openCount <- int(port)
+					}
+					return
 				}(target, openCount, i)
 			}
 		}(threadPool, openCount)
-		numOfPorts := end - start
-		num := int32(0)
+
 		for open := range openCount {
-			num++
 			if open != 0 {
 				fmt.Println("Open port: ", open)
 			}
-			<-threadPool
-			wg.Done()
-			if num == numOfPorts {
-				break
-			}
 
 		}
-		wg.Wait()
 
 	},
 }
 
-func isOpen(target string, openCount chan int, port int32) {
+func isOpen(target string, port int32) bool {
 
 	address := target + ":" + strconv.Itoa(int(port))
 	if _, err := net.Dial("tcp", address); err == nil {
-		openCount <- int(port)
-		return
+		return true
 	}
-	openCount <- 0
+	return false
 }
 
 func init() {
