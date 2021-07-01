@@ -1,7 +1,7 @@
 package main
 
 import (
-	"huntsman/cmd"
+	"github.com/souvikhaldar/huntsman/cmd"
 )
 
 func main() {
